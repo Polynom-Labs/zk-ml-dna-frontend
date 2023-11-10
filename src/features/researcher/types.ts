@@ -4,4 +4,8 @@ export type Researcher = {
   slug: string;
   photoUrl?: string;
   price?: number;
+  status?: string;
+  submissions?: number;
+  progress?: number;
+  description?: string;
 };

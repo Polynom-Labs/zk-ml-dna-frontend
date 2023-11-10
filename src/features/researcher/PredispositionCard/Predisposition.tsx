@@ -1,26 +1,22 @@
 "use client";
 import { FC } from "react";
-import Link from "next/link";
 // import cn from "classnames";
 import { Button } from "@radix-ui/themes";
 import { Pulse } from "@phosphor-icons/react";
 import { Researcher } from "../types";
-import styles from "./ResearcherCard.module.scss";
+import styles from "./Predisposition.module.scss";
 
-type ResearcherCardProps = {
+type PredispositionProps = {
   className?: string;
   researcher: Researcher;
 };
 
-export const ResearcherCard: FC<ResearcherCardProps> = ({
+export const Predisposition: FC<PredispositionProps> = ({
   className,
   researcher,
 }) => {
   return (
-    <Link
-      href={`/researchers/${researcher.slug}`}
-      className={styles.researcher}
-    >
+    <div className={styles.predisposition}>
       <aside className={styles.media}>
         {researcher.photoUrl ? (
           <img
@@ -36,18 +32,38 @@ export const ResearcherCard: FC<ResearcherCardProps> = ({
       </aside>
 
       <header className={styles.content}>
-        <h3 className={styles.title}>{researcher.title}</h3>
+        <h1 className={styles.title}>{researcher.title}</h1>
         <p className={styles.name}>{researcher.name}</p>
       </header>
 
-      <footer className={styles.footer}>
+      <aside className={styles.info}>
+        <div className={styles.status}>
+          {researcher.status === "available" && (
+            <div className={styles.badge}>Open to submissions</div>
+          )}
+        </div>
         <span className={styles.price}>
           {researcher.price && <>{researcher.price} ALEO</>}
         </span>
-        <Button variant="solid" radius="full">
+      </aside>
+
+      {researcher.description && (
+        <section className={styles.description}>
+          <h3>Research Description</h3>
+          <p>{researcher.description}</p>
+        </section>
+      )}
+
+      <footer className={styles.footer}>
+        <Button
+          variant="solid"
+          radius="full"
+          size="4"
+          className={styles.submit}
+        >
           Submit DNA
         </Button>
       </footer>
-    </Link>
+    </div>
   );
 };

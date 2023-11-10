@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Twype - Speak Freely",
+  title: "Polynom Labs",
   description: "...Description",
 };
 
