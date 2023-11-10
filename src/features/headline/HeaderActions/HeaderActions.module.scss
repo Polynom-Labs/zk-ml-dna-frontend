@@ -1,0 +1,7 @@
+@import "@/styles/_mixins.module";
+
+.wallet {
+  @include device(mobile) {
+    display: none;
+  }
+}

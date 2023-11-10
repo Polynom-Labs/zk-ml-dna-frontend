@@ -15,5 +15,9 @@ export const RequestRecords: FC = () => {
     }
   };
 
-  return <button onClick={onClick}>Request Records</button>;
+  return (
+    <button onClick={onClick} disabled={!publicKey}>
+      Request Records
+    </button>
+  );
 };
