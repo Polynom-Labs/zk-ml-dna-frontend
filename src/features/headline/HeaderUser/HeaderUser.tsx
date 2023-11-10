@@ -32,12 +32,10 @@ export const HeaderUser: FC<HeaderUserProps> = ({ className }) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <Avatar
-          size="3"
-          src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
-          fallback="AT"
-          radius="full"
-        />
+        <div className={styles.button}>
+          <Avatar size="2" color="cyan" fallback="" radius="full" />
+          <span className={styles.wallet}>aleo346...fhsdfg</span>
+        </div>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
