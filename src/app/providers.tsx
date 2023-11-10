@@ -1,13 +1,21 @@
 "use client";
-
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useState } from "react";
+import { AleoProvider } from "@/features/wallet/AleoProvider";
+import { AleoWalletProvider } from "@/features/wallet/aleo-wallet-provider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import React from "react";
+import { Modal } from "@/features/modal/Modal";
 
 export const Providers: FC<PropsWithChildren> = ({ children }) => {
-  const [queryClient] = React.useState(() => new QueryClient());
+  const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <AleoProvider>
+        <AleoWalletProvider>
+          {children}
+          <Modal />
+        </AleoWalletProvider>
+      </AleoProvider>
+    </QueryClientProvider>
   );
 };

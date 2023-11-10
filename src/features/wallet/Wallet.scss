@@ -1,0 +1,56 @@
+.wallet {
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+
+    border-radius: 40px;
+
+    padding: 8px 15px;
+
+    background: #285BFD;
+
+    font-family: "Inter";
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #FFF;
+
+    &:not(.wallet_connected) {
+        &:hover {
+            background: linear-gradient(90deg, #285BFD 0%, #00BFF9 100%);
+        }
+    }
+
+    & svg, img {
+        width: 24px;
+        height: 24px;
+
+        margin-right: 8px;
+    }
+
+    &_connected {
+        background: #1E2029;
+        padding: 8px;
+
+        cursor: default;
+    }
+
+    &-disconnect {
+        display: flex;
+        
+        cursor: pointer;
+
+        margin-left: 14px;
+
+        & svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        & path {
+            stroke: #fff;
+        }
+    }
+}
