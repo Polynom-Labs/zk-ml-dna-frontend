@@ -14,7 +14,6 @@ export const ResearchersList: FC<ResearchersListProps> = ({
   className,
   researchers,
 }) => {
-  console.log("🚀 ~ researchers:", researchers);
   return (
     <div className={styles.researchers}>
       <ul className={styles.list}>

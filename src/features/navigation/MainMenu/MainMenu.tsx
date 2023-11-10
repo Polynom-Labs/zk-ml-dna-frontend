@@ -55,7 +55,7 @@ export const MainMenu: FC<MainMenuProps> = ({
                 { [styles.active]: item?.isActive },
                 { [styles.upload]: item?.name === MenuItemName.UPLOAD }
               )}
-              href={`#${item?.slug}`}
+              href={`/${item?.slug}`}
             >
               <span className={styles.icon}>{item?.icon}</span>
               {item?.name !== MenuItemName.UPLOAD && (

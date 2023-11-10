@@ -18,11 +18,6 @@ export const HeaderUser: FC<HeaderUserProps> = ({ className }) => {
       icon: <Envelope />,
     },
     {
-      text: "Favorites",
-      slug: "#favorites",
-      icon: <Envelope />,
-    },
-    {
       text: "Settings",
       slug: "#settings",
       icon: <Envelope />,
@@ -32,10 +27,10 @@ export const HeaderUser: FC<HeaderUserProps> = ({ className }) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <div className={styles.button}>
+        <button className={styles.button}>
           <Avatar size="2" color="cyan" fallback="" radius="full" />
           <span className={styles.wallet}>aleo346...fhsdfg</span>
-        </div>
+        </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>

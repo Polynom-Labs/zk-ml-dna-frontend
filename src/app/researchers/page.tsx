@@ -7,10 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ResearchersPage() {
-  return (
-    <div>
-      <h1>Researchers</h1>
-      <ResearchersListLoader />
-    </div>
-  );
+  return <ResearchersListLoader />;
 }
