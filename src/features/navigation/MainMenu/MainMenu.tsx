@@ -22,13 +22,13 @@ export const MainMenu: FC<MainMenuProps> = ({
       text: "Researchers",
       slug: "researchers",
       icon: <Users weight="bold" />,
+      isActive: true,
     },
     {
       name: MenuItemName.SUBJECTS,
       text: "Subjects",
       slug: "subjects",
       icon: <Atom weight="bold" />,
-      isActive: true,
     },
     {
       name: MenuItemName.PREDICT,
