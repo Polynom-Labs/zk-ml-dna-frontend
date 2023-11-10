@@ -18,6 +18,36 @@
   @include device(miniMobile) {
     padding-inline-start: 0;
   }
+
+  .sidebar {
+    position: fixed;
+    top: var(--panel-size);
+    bottom: 0;
+    left: 0;
+    width: var(--sidebar-size);
+
+    @include device(miniMobile) {
+      display: none;
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include device(notMiniMobile) {
+      display: none;
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .main {
