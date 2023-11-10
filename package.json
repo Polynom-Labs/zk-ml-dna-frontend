@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@demox-labs/aleo-wallet-adapter-base": "^0.0.20",
+    "@demox-labs/aleo-wallet-adapter-leo": "^0.0.19",
+    "@demox-labs/aleo-wallet-adapter-react": "^0.0.19",
+    "@demox-labs/aleo-wallet-adapter-reactui": "^0.0.31",
     "@phosphor-icons/react": "^2.0.13",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-form": "^0.0.3",
