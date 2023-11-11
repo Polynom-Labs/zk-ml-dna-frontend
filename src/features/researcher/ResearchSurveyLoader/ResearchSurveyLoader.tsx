@@ -6,11 +6,15 @@ import { ProgressActions } from "@/components/ProgressActions/ProgressActions";
 import { LoaderOverflow } from "@/components/LoaderOverflow/LoaderOverflow";
 import { Survey, SurveyForm } from "../SurveyForm/SurveyForm";
 import steps from "@/mocks/steps.json";
+import { useLocalStorage } from "react-use";
 
 type ResearchSurveyLoaderProps = {};
 
 export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
   const stepsList: Step[] = steps;
+
+  const [dnaValue, setDnaValue, removeDna] = useLocalStorage("dnaCode", "");
+  console.log("🚀 ~ dnaValue:", dnaValue);
 
   const [surveyData, setSurveyData] = useState<Survey | null>(null);
   console.log("🚀 ~ surveyData:", surveyData);
@@ -18,8 +22,12 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = useCallback(() => {
-    console.log("DO SOMETHING WITH", surveyData);
-  }, [surveyData]);
+    const userData = {
+      ...surveyData,
+      dnaCode: dnaValue ? JSON.parse(dnaValue) : undefined,
+    };
+    console.log("DO SOMETHING WITH", userData);
+  }, [dnaValue, surveyData]);
 
   return (
     <Article
@@ -32,7 +40,7 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
           passedSteps={["connect-wallet", "submit-dna"]}
         />
       }
-      backUrl="."
+      backUrl="./submit"
     >
       <SurveyForm onchange={setSurveyData} />
       <ProgressActions backUrl="./submit" onSubmit={handleSubmit} />

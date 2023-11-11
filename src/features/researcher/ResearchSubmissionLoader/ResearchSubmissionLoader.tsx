@@ -1,6 +1,7 @@
 "use client";
 import { FC, useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLocalStorage } from "react-use";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
 import { FileInput } from "@/components/FileInput/FileInput";
@@ -23,29 +24,35 @@ export const ResearchSubmissionLoader: FC<
   const [dnaCode, setDnaCode] = useState<number[]>([]);
   console.log("🚀 ~ dnaCode:", dnaCode);
 
-  const convertDna = useCallback((content: string) => {
-    const code = content.substring(content.indexOf("\n") + 1);
-    const first15 = code?.substring(0, 15);
-    if (first15?.length !== 15) return;
+  const [dnaValue, setDnaValue, removeDna] = useLocalStorage("dnaCode", "");
 
-    const convertCharToNumber = (char: string) => {
-      if (char == "T") return 0;
-      if (char == "C") return 1;
-      if (char == "G") return 2;
-      if (char == "A") return 3;
-    };
+  const convertDna = useCallback(
+    (content: string) => {
+      const code = content.substring(content.indexOf("\n") + 1);
+      const first15 = code?.substring(0, 15);
+      if (first15?.length !== 15) return;
 
-    let result: number[] = [];
+      const convertCharToNumber = (char: string) => {
+        if (char == "T") return 0;
+        if (char == "C") return 1;
+        if (char == "G") return 2;
+        if (char == "A") return 3;
+      };
 
-    for (let i = 0; i < first15.length; i++) {
-      const char = convertCharToNumber(first15[i]);
-      if (char) {
-        result.push(char);
+      let result: number[] = [];
+
+      for (let i = 0; i < first15.length; i++) {
+        const char = convertCharToNumber(first15[i]);
+        if (char) {
+          result.push(char);
+        }
       }
-    }
 
-    setDnaCode(result);
-  }, []);
+      setDnaCode(result);
+      setDnaValue(JSON.stringify(result));
+    },
+    [setDnaValue]
+  );
 
   const handleFileChange = useCallback(
     (files: File[]) => {
