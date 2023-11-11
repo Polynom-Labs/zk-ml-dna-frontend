@@ -18,8 +18,8 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = useCallback(() => {
-    console.log("DO SOMETHING");
-  }, []);
+    console.log("DO SOMETHING WITH", surveyData);
+  }, [surveyData]);
 
   return (
     <Article
