@@ -1,7 +1,10 @@
 @import "@/styles/_mixins.module";
 
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   min-width: var(--device-min-size);
   background: var(--color-background);

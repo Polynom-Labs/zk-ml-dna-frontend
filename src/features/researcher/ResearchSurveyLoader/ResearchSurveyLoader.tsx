@@ -1,11 +1,10 @@
 "use client";
-import { FC, useCallback, useState } from "react";
-import { useRouter } from "next/navigation";
+import { FC, useState } from "react";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
-import { FileInput } from "@/components/FileInput/FileInput";
 import { ProgressActions } from "@/components/ProgressActions/ProgressActions";
 import { LoaderOverflow } from "@/components/LoaderOverflow/LoaderOverflow";
+import { SurveyForm } from "../SurveyForm/SurveyForm";
 import steps from "@/mocks/steps.json";
 
 type ResearchSurveyLoaderProps = {};
@@ -28,7 +27,7 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       }
       backUrl="."
     >
-      FORM
+      <SurveyForm />
       <ProgressActions backUrl="./submit" nextUrl="result" />
       {isLoading && <LoaderOverflow title="Calculation..." />}
     </Article>

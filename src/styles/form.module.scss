@@ -1,5 +1,12 @@
 @import "./_mixins.module";
 
+.form {
+  --label-gap: var(--form-label-gap, 4px);
+  --control-height: var(--form-control-height, 48px);
+  --control-radius: var(--form-control-radius, 8px);
+  --control-inline-padding: var(--form-control-inline-padding, 16px);
+}
+
 .row {
   display: flex;
   justify-self: stretch;
@@ -29,4 +36,19 @@
 .input {
   flex: 1;
   width: 100%;
+  height: var(--control-height);
+  padding-inline: var(--control-inline-padding);
+  border-radius: var(--control-radius);
+  border: 1px solid var(--color-border-contrast);
+
+  &:focus {
+    border-color: var(--color-focus);
+    outline-color: var(--color-focus);
+  }
+}
+
+.label {
+  display: block;
+  margin-block: 0 var(--label-gap);
+  font-weight: 600;
 }
