@@ -16,8 +16,8 @@ export const ResearchSubmissionLoader: FC<
   const [files, setFiles] = useState<File[]>([]);
 
   const handleFileChange = useCallback((files: File[]) => {
-    console.log("FILES CHANGED, DO SOMETHING WITH IT :)");
     setFiles(files);
+    console.log("FILES CHANGED, DO SOMETHING WITH IT :)");
   }, []);
 
   return (
