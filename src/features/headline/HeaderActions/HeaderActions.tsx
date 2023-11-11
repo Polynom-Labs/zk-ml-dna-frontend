@@ -12,10 +12,11 @@ type HeaderActionsProps = {
 export const HeaderActions: FC<HeaderActionsProps> = ({ className }) => {
   return (
     <Flex gap="2" align="center">
-      <div className={styles.wallet}>
+      {/* <div className={styles.wallet}>
         <Wallet />
       </div>
-      <HeaderUser />
+      <HeaderUser /> */}
+      <Wallet />
     </Flex>
   );
 };

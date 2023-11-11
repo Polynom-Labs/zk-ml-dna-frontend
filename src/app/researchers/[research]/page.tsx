@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PredispositionLoader } from "@/features/researcher/PredispositionLoader/PredispositionLoader";
+import { ResearchLoader } from "@/features/researcher/ResearchLoader/ResearchLoader";
 
 export const metadata: Metadata = {
   title: "Polynom Labs",
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ResearchersPage() {
-  return <PredispositionLoader />;
+  return <ResearchLoader />;
 }

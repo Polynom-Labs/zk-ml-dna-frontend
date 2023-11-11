@@ -5,30 +5,17 @@
   --panel-size: 48px;
 
   min-width: var(--device-min-size);
-  padding: var(--panel-size) 0 var(--panel-size) var(--panel-size);
+  padding: var(--panel-size) 0 var(--panel-size) 0;
 
   @include device(notMobile) {
     --sidebar-size: 232px;
     --panel-size: 60px;
 
-    padding-inline-start: var(--sidebar-size);
     padding-block-end: 0;
   }
 
   @include device(miniMobile) {
     padding-inline-start: 0;
-  }
-
-  .sidebar {
-    position: fixed;
-    top: var(--panel-size);
-    bottom: 0;
-    left: 0;
-    width: var(--sidebar-size);
-
-    @include device(miniMobile) {
-      display: none;
-    }
   }
 
   .footer {
@@ -56,6 +43,6 @@
 }
 
 .content {
-  max-width: 1776px;
+  max-width: 1024px;
   margin: 0 auto;
 }

@@ -1,6 +1,5 @@
 import { FC, PropsWithChildren } from "react";
 import { Header } from "@/features/headline/Header/Header";
-import { Sidebar } from "@/features/sidebar/Sidebar/Sidebar";
 import { Footer } from "@/features/footer/Footer/Footer";
 import styles from "./MainLayout.module.scss";
 
@@ -15,7 +14,6 @@ export const MainLayout: FC<PropsWithChildren<MainLayoutProps>> = ({
       <main className={styles.main}>
         <div className={styles.content}>{children}</div>
       </main>
-      <Sidebar className={styles.sidebar} />
       <Footer className={styles.footer} />
     </div>
   );

@@ -1,20 +1,25 @@
 "use client";
 import { FC } from "react";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 // import cn from "classnames";
 import { Button } from "@radix-ui/themes";
 import { Pulse } from "@phosphor-icons/react";
 import { Researcher } from "../types";
-import styles from "./Predisposition.module.scss";
+import styles from "./ResearchCard.module.scss";
 
-type PredispositionProps = {
+type ResearchCardProps = {
   className?: string;
   researcher: Researcher;
 };
 
-export const Predisposition: FC<PredispositionProps> = ({
+export const ResearchCard: FC<ResearchCardProps> = ({
   className,
   researcher,
 }) => {
+  const { research } = useParams();
+  console.log("🚀 ~ research:", research);
+
   return (
     <div className={styles.predisposition}>
       <aside className={styles.media}>
@@ -55,14 +60,19 @@ export const Predisposition: FC<PredispositionProps> = ({
       )}
 
       <footer className={styles.footer}>
-        <Button
-          variant="solid"
-          radius="full"
-          size="4"
-          className={styles.submit}
+        <Link
+          href={`/researchers/${research}/submit`}
+          className={styles.submitLink}
         >
-          Submit DNA
-        </Button>
+          <Button
+            variant="solid"
+            radius="full"
+            size="4"
+            className={styles.submit}
+          >
+            Submit DNA
+          </Button>
+        </Link>
       </footer>
     </div>
   );

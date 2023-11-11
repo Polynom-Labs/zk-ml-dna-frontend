@@ -7,6 +7,7 @@
   align-items: center;
   gap: var(--space-base);
   color: var(--color-brand);
+  text-decoration: none;
 
   @include device(mobile) {
     --logo-size: 16px;

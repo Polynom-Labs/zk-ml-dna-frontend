@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { Azeret_Mono } from "next/font/google";
 import cn from "classnames";
 import styles from "./Logo.module.scss";
@@ -12,7 +12,7 @@ type LogoProps = {
 
 export const Logo: FC<LogoProps> = ({ className }) => {
   return (
-    <div className={cn(styles.logo, Aazeret.className, className)}>
+    <Link href="/" className={cn(styles.logo, Aazeret.className, className)}>
       <svg
         width="512"
         height="512"
@@ -30,6 +30,6 @@ export const Logo: FC<LogoProps> = ({ className }) => {
         <path d="M282 156L282 356H230L230 156L282 156Z" />
       </svg>
       Polynom Labs
-    </div>
+    </Link>
   );
 };

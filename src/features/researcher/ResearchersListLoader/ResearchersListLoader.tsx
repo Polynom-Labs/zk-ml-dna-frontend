@@ -8,7 +8,7 @@ type ResearchersListLoaderProps = {};
 
 export const ResearchersListLoader: FC<ResearchersListLoaderProps> = () => {
   return (
-    <Article title="Ongoing Researchers" backUrl="/">
+    <Article title="Ongoing Researchers">
       <ResearchersList researchers={researchers} />
     </Article>
   );
