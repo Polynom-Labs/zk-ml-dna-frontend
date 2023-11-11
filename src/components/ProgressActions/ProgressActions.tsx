@@ -7,20 +7,22 @@ import styles from "./ProgressActions.module.scss";
 
 type ProgressActionsProps = {
   backUrl?: string;
-  continueUrl?: string;
+  nextUrl?: string;
+  nextText?: string;
   canBack?: boolean;
-  canContinue?: boolean;
+  canNext?: boolean;
   className?: string;
 };
 
 export const ProgressActions: FC<ProgressActionsProps> = ({
   backUrl,
-  continueUrl,
+  nextUrl,
   canBack = true,
-  canContinue = true,
+  canNext = true,
+  nextText = "Submit",
   className,
 }) => {
-  if (!backUrl && !continueUrl) return null;
+  if (!backUrl && !nextUrl) return null;
 
   return (
     <div className={styles.progress}>
@@ -39,18 +41,18 @@ export const ProgressActions: FC<ProgressActionsProps> = ({
           </Link>
         )}
 
-        {continueUrl && (
-          <Link href={continueUrl} className={styles.link}>
+        {nextUrl && (
+          <Link href={nextUrl} className={styles.link}>
             <Button
               variant="solid"
               radius="full"
               size="4"
-              disabled={!canContinue}
+              disabled={!canNext}
               className={cn(styles.continue, {
-                [styles.disabled]: !canContinue,
+                [styles.disabled]: !canNext,
               })}
             >
-              Continue
+              {nextText}
             </Button>
           </Link>
         )}

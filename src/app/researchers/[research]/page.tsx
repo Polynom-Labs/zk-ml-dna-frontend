@@ -6,6 +6,6 @@ export const metadata: Metadata = {
   description: "...Description",
 };
 
-export default function ResearchersPage() {
+export default function ResearcherPage() {
   return <ResearchLoader />;
 }

@@ -1,5 +1,6 @@
 "use client";
 import { FC, useCallback, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
 import { FileInput } from "@/components/FileInput/FileInput";
@@ -12,6 +13,7 @@ type ResearchSubmissionLoaderProps = {};
 export const ResearchSubmissionLoader: FC<
   ResearchSubmissionLoaderProps
 > = () => {
+  const router = useRouter();
   const stepsList: Step[] = steps;
 
   const [files, setFiles] = useState<File[]>([]);
@@ -66,9 +68,10 @@ export const ResearchSubmissionLoader: FC<
       setIsLoading(true);
       setTimeout(() => {
         setIsLoading(false);
+        router.push("./survey");
       }, 3000);
     },
-    [convertDna]
+    [convertDna, router]
   );
 
   return (
@@ -89,7 +92,7 @@ export const ResearchSubmissionLoader: FC<
         fileTypes={["JPG", "PNG", "GIF"]}
         onChange={handleFileChange}
       />
-      <ProgressActions backUrl="." continueUrl="survey" />
+      <ProgressActions backUrl="." nextUrl="survey" nextText="Continue" />
       {isLoading && <LoaderOverflow title="Calculation..." />}
     </Article>
   );

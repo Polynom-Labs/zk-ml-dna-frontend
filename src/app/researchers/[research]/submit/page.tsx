@@ -3,9 +3,9 @@ import { ResearchSubmissionLoader } from "@/features/researcher/ResearchSubmissi
 
 export const metadata: Metadata = {
   title: "Polynom Labs",
-  description: "Upload your DNA",
+  description: "Simple survey",
 };
 
-export default function ResearchersPage() {
+export default function SubmitPage() {
   return <ResearchSubmissionLoader />;
 }
