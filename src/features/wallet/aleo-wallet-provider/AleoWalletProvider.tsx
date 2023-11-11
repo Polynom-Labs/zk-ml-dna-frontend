@@ -131,6 +131,76 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
     } catch (err) {}
   }, [select, closeModal]);
 
+  const submitBiometricData = useCallback(
+    async (age: number, diseased: number, gender: number, biometric_data: Array<number>) => {
+        try {
+            showModal({
+                modalType: 'transactionLoader',
+                modalState: {},
+            });
+
+            if (publicKey) {
+              // struct sample:
+              // "{diseased: 0i8, age: 50i8, gender:1i8}"
+                let answers_struct = {
+                  diseased: diseased + "i8", 
+                  age: age + 'i8', 
+                  gender: gender + 'i8'
+                };
+
+                // struct sample:
+                // {x0:1i8,x1:1i8,x2:0i8,x3:3i8,x4:2i8,x5:1i8,x6:1i8,x7:1i8,x8:0i8,x9:1i8,x10:2i8,x11:3i8,x12:1i8,x13:1i8,x14:1i8}
+                let biometrict_struct = {
+                    x0: biometric_data[0] + "i8",
+                    x1: biometric_data[1] + "i8",
+                    x2: biometric_data[2] + "i8",
+                    x3: biometric_data[3] + "i8",
+                    x4: biometric_data[4] + "i8",
+                    x5: biometric_data[5] + "i8",
+                    x6: biometric_data[6] + "i8",
+                    x7: biometric_data[7] + "i8",
+                    x8: biometric_data[8] + "i8",
+                    x9: biometric_data[9] + "i8",
+                    x10: biometric_data[10] + "i8",
+                    x11: biometric_data[11] + "i8",
+                    x12: biometric_data[12] + "i8",
+                    x13: biometric_data[13] + "i8",
+                    x14: biometric_data[14] + "i8"
+                };
+                const inputs = [
+                    answers_struct,
+                    biometrict_struct
+                ];
+
+                const aleoTransaction = Transaction.createTransaction(
+                    publicKey,
+                    WalletAdapterNetwork.Testnet,
+                    "zk_ml_dna_v0.aleo",
+                    "submit",
+                    inputs,
+                    1_500_000,
+                );
+
+                if (requestTransaction) {
+                    const txId = await requestTransaction(aleoTransaction);
+                    await wait(txId);
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        } finally {
+            closeModal();
+        }
+    },
+    [
+        closeModal,
+        publicKey,
+        requestTransaction,
+        showModal,
+        wait
+    ]
+);
+
   // const privateFaucet = useCallback(
   //     async (amount: number | string, token: Token) => {
   //         try {
@@ -307,6 +377,7 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
         address: publicKey,
         icon: wallet?.adapter.icon,
         balance,
+        submitBiometricData,
         // publicFaucet,
         // privateFaucet,
         publicBalance,

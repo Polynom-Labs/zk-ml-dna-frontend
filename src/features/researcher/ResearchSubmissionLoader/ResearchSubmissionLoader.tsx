@@ -20,7 +20,7 @@ export const ResearchSubmissionLoader: FC<
   const [isLoading, setIsLoading] = useState(false);
   const [dnaData, setDnaData] = useState<string>("");
   console.log("🚀 ~ dnaData:", dnaData);
-  const [dnaCode, setDnaCode] = useState<string>("");
+  const [dnaCode, setDnaCode] = useState<number[]>([]);
   console.log("🚀 ~ dnaCode:", dnaCode);
 
   const convertDna = useCallback((content: string) => {
@@ -44,9 +44,7 @@ export const ResearchSubmissionLoader: FC<
       }
     }
 
-    const finalCode = result.join("");
-
-    setDnaCode(finalCode);
+    setDnaCode(result);
   }, []);
 
   const handleFileChange = useCallback(
