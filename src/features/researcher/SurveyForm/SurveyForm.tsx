@@ -2,7 +2,6 @@
 import { FC, useEffect, useMemo, useState } from "react";
 import cn from "classnames";
 import * as Form from "@radix-ui/react-form";
-import { Switch } from "@/components/Switch/Switch";
 import formStyles from "@/styles/form.module.scss";
 import styles from "./SurveyForm.module.scss";
 
@@ -39,28 +38,44 @@ export const SurveyForm: FC<SurveyFormProps> = ({ onchange }) => {
     <Form.Root className={cn(formStyles.form, styles.survey)}>
       <div className={formStyles.row}>
         <Form.Field name="roomName" className={formStyles.field}>
-          <Switch
-            label="Diseased"
-            checked={isDiseased}
-            onChange={setIsDiseased}
-          />
+          <label className={styles.label}>
+            Diseased
+            <input
+              type="checkbox"
+              onChange={(e) => setIsDiseased(e.target.checked)}
+            />
+          </label>
         </Form.Field>
       </div>
 
       <div className={formStyles.row}>
         <Form.Field name="roomName" className={formStyles.field}>
-          <Switch
-            label="Gender (Male?)"
-            checked={isMale}
-            onChange={setIsMale}
-          />
+          <Form.Label>Gender</Form.Label>
+          <label className={styles.label}>
+            <input
+              type="radio"
+              name="gender"
+              onChange={(e) => setIsMale(e.target.value === "on")}
+            />{" "}
+            Male
+          </label>
+          <label className={styles.label}>
+            <input
+              type="radio"
+              name="gender"
+              onChange={(e) => setIsMale(e.target.value !== "on")}
+            />{" "}
+            Female
+          </label>
         </Form.Field>
       </div>
+
       <div className={formStyles.row}>
         <Form.Field
           name="roomTimeout"
           className={cn(formStyles.field, styles.ageField)}
         >
+          <Form.Label>Age</Form.Label>
           <Form.Control asChild>
             <input
               type="number"
@@ -69,7 +84,6 @@ export const SurveyForm: FC<SurveyFormProps> = ({ onchange }) => {
               onChange={(event) => setAge(event.target.value)}
             />
           </Form.Control>
-          <Form.Label>Age</Form.Label>
         </Form.Field>
 
         <div className={formStyles.field}></div>
