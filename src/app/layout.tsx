@@ -4,6 +4,7 @@ import "@radix-ui/themes/styles.css";
 import { MainLayout } from "@/features/layout/MainLayout/MainLayout";
 import { Providers } from "@/app/providers";
 import "@/styles/main.scss";
+import "@/styles/theme-config.scss";
 
 export const metadata: Metadata = {
   title: "Polynom",
