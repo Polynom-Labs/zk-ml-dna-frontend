@@ -1,0 +1,20 @@
+.progress {
+  margin-block-start: 40px;
+  padding-block-start: 40px;
+  border-block-start: 1px solid var(--color-border);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back,
+.continue {
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
