@@ -16,18 +16,58 @@ export const ResearchSubmissionLoader: FC<
 
   const [files, setFiles] = useState<File[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [dnaData, setDnaData] = useState<string>("");
+  console.log("🚀 ~ dnaData:", dnaData);
+  const [dnaCode, setDnaCode] = useState<string>("");
+  console.log("🚀 ~ dnaCode:", dnaCode);
 
-  const handleFileChange = useCallback((files: File[]) => {
-    setFiles(files);
-    console.log("FILES CHANGED, DO SOMETHING WITH IT :)");
+  const convertDna = useCallback((content: string) => {
+    const code = content.substring(content.indexOf("\n") + 1);
+    const first15 = code?.substring(0, 15);
+    if (first15?.length !== 15) return;
 
-    // @TODO: Loader Demo
-    if (!files.length) return;
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+    const convertCharToNumber = (char: string) => {
+      if (char == "T") return 0;
+      if (char == "C") return 1;
+      if (char == "G") return 2;
+      if (char == "A") return 3;
+    };
+
+    let result: number[] = [];
+
+    for (let i = 0; i < first15.length; i++) {
+      const char = convertCharToNumber(first15[i]);
+      if (char) {
+        result.push(char);
+      }
+    }
+
+    setDnaCode(result.join(""));
   }, []);
+
+  const handleFileChange = useCallback(
+    (files: File[]) => {
+      setFiles(files);
+      if (!files[0]) return;
+      const fileReader = new FileReader();
+      fileReader.readAsText(files[0]);
+      fileReader.onload = (e) => {
+        const contents = e?.target?.result;
+        if (contents && typeof contents === "string") {
+          setDnaData(contents);
+          convertDna(contents);
+        }
+      };
+
+      // @TODO: Loader Demo
+      if (!files.length) return;
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
+    },
+    [convertDna]
+  );
 
   return (
     <Article
