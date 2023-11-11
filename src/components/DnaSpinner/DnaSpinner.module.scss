@@ -1,0 +1,12 @@
+.spinner {
+  --size: var(--spinner-size, 128px);
+  --deg: var(--spinner-deg, 0);
+
+  width: var(--size);
+  height: var(--size);
+  transform: scale(1.6) rotate(var(--deg));
+}
+
+.horizontal {
+  --deg: var(--spinner-deg, -45deg);
+}
