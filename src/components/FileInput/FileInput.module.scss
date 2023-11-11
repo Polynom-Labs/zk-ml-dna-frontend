@@ -1,0 +1,86 @@
+.fileInput {
+  --file-preview-size: 140px;
+
+  position: relative;
+  margin-block: 40px;
+}
+
+.area,
+.files {
+  border: 1px dashed var(--color-text-secondary);
+  border-radius: 16px;
+  background: var(--color-background-alt);
+}
+
+.active {
+  border: 1px solid var(--color-brand);
+  box-shadow: 0 0 0 8px rgba(#0cb8b6, 0.4);
+}
+
+.content {
+  padding: 60px 40px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.title {
+  color: var(--color-text-secondary);
+  font-size: var(--font-title);
+  font-weight: bold;
+}
+
+.or {
+  margin: 20px 0 28px;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-base);
+  font-weight: bold;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-base);
+  min-height: 274px;
+  padding: var(--space-base);
+}
+
+.file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: var(--file-preview-size);
+  height: var(--file-preview-size);
+  border-radius: 8px;
+  background: var(--color-brand);
+  color: var(--color-text-alt);
+}
+
+.ext {
+  font-size: 60px;
+  line-height: 1;
+}
+
+.fileName {
+  font-size: var(--font-base);
+}
+
+.delete {
+  position: absolute;
+  inset-block-start: 4px;
+  inset-inline-end: 4px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
