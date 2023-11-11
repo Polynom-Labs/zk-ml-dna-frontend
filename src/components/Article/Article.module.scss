@@ -2,15 +2,22 @@
   margin-block: var(--space-large);
 }
 
+.beforeArticle {
+  margin-block-end: var(--space-large);
+}
+
 .header {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: var(--space-small);
   margin-block-end: var(--space-big);
 }
 
-.title {
+.text {
   flex: 1;
+}
+
+.title {
   margin-block: 0;
   margin-inline-end: var(--space-medium);
   padding: 0;
@@ -18,11 +25,20 @@
   font-weight: var(--font-medium);
 }
 
+.description {
+  margin: 0;
+}
+
 .back {
   flex: 0 0 auto;
   display: flex;
+  margin-block-start: 7px;
   font-size: var(--font-large);
   color: inherit;
+}
+
+.actions {
+  margin-block-start: 4px;
 }
 
 .action {

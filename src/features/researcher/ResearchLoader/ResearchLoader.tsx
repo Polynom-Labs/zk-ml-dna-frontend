@@ -8,7 +8,7 @@ type ResearchLoaderProps = {};
 
 export const ResearchLoader: FC<ResearchLoaderProps> = () => {
   return (
-    <Article>
+    <Article title="Research" backUrl=".">
       <ResearchCard researcher={researcher} />
     </Article>
   );
