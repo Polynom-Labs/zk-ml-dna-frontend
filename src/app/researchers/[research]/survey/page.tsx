@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ResearchSurveyLoader } from "@/features/researcher/ResearchSurveyLoader/ResearchSurveyLoader";
 
 export const metadata: Metadata = {
-  title: "Polynom Labs",
+  title: "zkMed",
   description: "Provide Additional Information",
 };
 

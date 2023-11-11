@@ -42,11 +42,11 @@
 
   .passed &,
   .current & {
-    background: var(--color-success);
+    background: var(--color-brand);
     color: var(--color-text-alt);
   }
 
   .current & {
-    box-shadow: 0 0 0 8px rgba(#0cb8b6, 0.3);
+    box-shadow: 0 0 0 8px rgba(#25a6ff, 0.3);
   }
 }

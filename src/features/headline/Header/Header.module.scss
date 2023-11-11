@@ -23,7 +23,7 @@
 
 .logo {
   flex: 0 0 auto;
-  font-size: var(--font-bigger);
+  font-size: 28px;
 
   @include device(mobile) {
     font-size: var(--font-base);
