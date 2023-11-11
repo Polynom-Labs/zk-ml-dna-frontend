@@ -41,12 +41,12 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
   } = useWallet();
   const [balance, setBalance] = useState<any>({});
 
-  const { data: publicBalance, refetch: refetchPublicBalance } = useQuery({
-    queryKey: ["publicBalance", publicKey],
-    queryFn: () => publicKey && fetchPublicBalance(publicKey),
-    enabled: !!publicKey,
-    refetchInterval: 10_000,
-  });
+  // const { data: publicBalance, refetch: refetchPublicBalance } = useQuery({
+  //   queryKey: ["publicBalance", publicKey],
+  //   queryFn: () => publicKey && fetchPublicBalance(publicKey),
+  //   enabled: !!publicKey,
+  //   refetchInterval: 10_000,
+  // });
 
   const fetchBalanceByContract = useCallback(
     async (contract: string) => {
@@ -94,11 +94,11 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
     [requestRecords, publicKey]
   );
 
-  useEffect(() => {
-    if (publicKey) {
-      fetchBalanceByContract(config.private.contract);
-    }
-  }, [fetchBalanceByContract, publicKey]);
+  // useEffect(() => {
+  //   if (publicKey) {
+  //     fetchBalanceByContract(config.private.contract);
+  //   }
+  // }, [fetchBalanceByContract, publicKey]);
 
   const disconnect = useCallback(async () => {
     await aleoDisconnect();
@@ -380,7 +380,7 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
         submitBiometricData,
         // publicFaucet,
         // privateFaucet,
-        publicBalance,
+        // publicBalance,
         // publicAddLiquidity,
         disconnect,
       }}

@@ -38,13 +38,14 @@ export const ResearchSubmissionLoader: FC<
         if (char == "C") return 1;
         if (char == "G") return 2;
         if (char == "A") return 3;
+        return -1;
       };
 
       let result: number[] = [];
 
       for (let i = 0; i < first15.length; i++) {
         const char = convertCharToNumber(first15[i]);
-        if (char && char > -1) {
+        if (char > -1) {
           result.push(char);
         }
       }

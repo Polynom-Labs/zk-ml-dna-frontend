@@ -7,6 +7,7 @@ import { LoaderOverflow } from "@/components/LoaderOverflow/LoaderOverflow";
 import { Survey, SurveyForm } from "../SurveyForm/SurveyForm";
 import steps from "@/mocks/steps.json";
 import { useLocalStorage } from "react-use";
+import { useWallet } from "@/features/wallet/hooks/useWallet";
 
 type ResearchSurveyLoaderProps = {};
 
@@ -21,12 +22,21 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  const { submitBiometricData } = useWallet()();
+
   const handleSubmit = useCallback(() => {
     const userData = {
       ...surveyData,
       dnaCode: dnaValue ? JSON.parse(dnaValue) : undefined,
     };
     console.log("DO SOMETHING WITH", userData);
+
+    submitBiometricData(
+      surveyData?.age,
+      surveyData?.diseased,
+      surveyData?.gender,
+      userData.dnaCode
+    )
   }, [dnaValue, surveyData]);
 
   return (
