@@ -42,7 +42,9 @@ export const ResearchSubmissionLoader: FC<
       }
     }
 
-    setDnaCode(result.join(""));
+    const finalCode = result.join("");
+
+    setDnaCode(finalCode);
   }, []);
 
   const handleFileChange = useCallback(
