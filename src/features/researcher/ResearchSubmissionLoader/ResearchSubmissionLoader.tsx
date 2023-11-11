@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
 import { FileInput } from "@/components/FileInput/FileInput";
@@ -14,6 +14,11 @@ export const ResearchSubmissionLoader: FC<
   const stepsList: Step[] = steps;
 
   const [files, setFiles] = useState<File[]>([]);
+
+  const handleFileChange = useCallback((files: File[]) => {
+    console.log("FILES CHANGED, DO SOMETHING WITH IT :)");
+    setFiles(files);
+  }, []);
 
   return (
     <Article
@@ -31,7 +36,7 @@ export const ResearchSubmissionLoader: FC<
       <FileInput
         selectedFiles={files}
         fileTypes={["JPG", "PNG", "GIF"]}
-        onChange={setFiles}
+        onChange={handleFileChange}
       />
       <ProgressActions backUrl="." continueUrl="survey" />
     </Article>
