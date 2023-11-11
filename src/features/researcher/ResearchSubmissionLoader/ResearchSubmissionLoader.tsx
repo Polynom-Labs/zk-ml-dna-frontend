@@ -25,6 +25,7 @@ export const ResearchSubmissionLoader: FC<
 
   const convertDna = useCallback((content: string) => {
     const code = content.substring(content.indexOf("\n") + 1);
+    console.log('raw code part: ' + code);
     const first15 = code?.substring(0, 15);
     if (first15?.length !== 15) return;
 
@@ -33,13 +34,14 @@ export const ResearchSubmissionLoader: FC<
       if (char == "C") return 1;
       if (char == "G") return 2;
       if (char == "A") return 3;
+      return -1;
     };
 
     let result: number[] = [];
 
     for (let i = 0; i < first15.length; i++) {
       const char = convertCharToNumber(first15[i]);
-      if (char) {
+      if (char > -1) {
         result.push(char);
       }
     }
