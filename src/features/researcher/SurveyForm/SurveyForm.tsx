@@ -55,6 +55,7 @@ export const SurveyForm: FC<SurveyFormProps> = ({ onchange }) => {
             <input
               type="radio"
               name="gender"
+              checked
               onChange={(e) => setIsMale(e.target.value === "on")}
             />{" "}
             Male
