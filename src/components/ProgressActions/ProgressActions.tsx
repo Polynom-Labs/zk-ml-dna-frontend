@@ -12,15 +12,17 @@ type ProgressActionsProps = {
   canBack?: boolean;
   canNext?: boolean;
   className?: string;
+  onSubmit?: () => void;
 };
 
 export const ProgressActions: FC<ProgressActionsProps> = ({
+  className,
   backUrl,
   nextUrl,
   canBack = true,
   canNext = true,
   nextText = "Submit",
-  className,
+  onSubmit,
 }) => {
   if (!backUrl && !nextUrl) return null;
 
@@ -55,6 +57,20 @@ export const ProgressActions: FC<ProgressActionsProps> = ({
               {nextText}
             </Button>
           </Link>
+        )}
+        {onSubmit && (
+          <Button
+            variant="solid"
+            radius="full"
+            size="4"
+            disabled={!canNext}
+            onClick={onSubmit}
+            className={cn(styles.continue, {
+              [styles.disabled]: !canNext,
+            })}
+          >
+            {nextText}
+          </Button>
         )}
       </div>
     </div>

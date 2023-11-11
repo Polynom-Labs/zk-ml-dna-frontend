@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
 import { ProgressActions } from "@/components/ProgressActions/ProgressActions";
@@ -13,6 +13,10 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
   const stepsList: Step[] = steps;
 
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = useCallback(() => {
+    console.log("DO SOMETHING");
+  }, []);
 
   return (
     <Article
@@ -28,7 +32,7 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       backUrl="."
     >
       <SurveyForm />
-      <ProgressActions backUrl="./submit" nextUrl="result" />
+      <ProgressActions backUrl="./submit" onSubmit={handleSubmit} />
       {isLoading && <LoaderOverflow title="Calculation..." />}
     </Article>
   );
