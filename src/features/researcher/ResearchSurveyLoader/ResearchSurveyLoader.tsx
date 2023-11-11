@@ -4,13 +4,16 @@ import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
 import { ProgressActions } from "@/components/ProgressActions/ProgressActions";
 import { LoaderOverflow } from "@/components/LoaderOverflow/LoaderOverflow";
-import { SurveyForm } from "../SurveyForm/SurveyForm";
+import { Survey, SurveyForm } from "../SurveyForm/SurveyForm";
 import steps from "@/mocks/steps.json";
 
 type ResearchSurveyLoaderProps = {};
 
 export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
   const stepsList: Step[] = steps;
+
+  const [surveyData, setSurveyData] = useState<Survey | null>(null);
+  console.log("🚀 ~ surveyData:", surveyData);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -31,7 +34,7 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       }
       backUrl="."
     >
-      <SurveyForm />
+      <SurveyForm onchange={setSurveyData} />
       <ProgressActions backUrl="./submit" onSubmit={handleSubmit} />
       {isLoading && <LoaderOverflow title="Calculation..." />}
     </Article>
