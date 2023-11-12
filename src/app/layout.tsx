@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import { ScrollArea, Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
+import { Poppins } from "next/font/google";
 import { MainLayout } from "@/features/layout/MainLayout/MainLayout";
 import { Providers } from "@/app/providers";
 import "@/styles/main.scss";
 import "@/styles/theme-config.scss";
+
+const PoppinsFont = Poppins({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Polynom",
@@ -20,12 +26,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" /> */}
-        {/* <link rel="preconnect" href="https://fonts.gstatic.com" crossrigin /> */}
-        {/* <link
-          href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@1,600&family=Poppins:ital,wght@0,100;1,100&display=swap"
-          rel="stylesheet"
-        /> */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="msapplication-TileColor" content="#0cb8b6" />
         <meta name="theme-color" content="#0cb8b6" />
       </head>
-      <body>
+      <body className={PoppinsFont.className}>
         <Theme>
           <ScrollArea
             type="always"

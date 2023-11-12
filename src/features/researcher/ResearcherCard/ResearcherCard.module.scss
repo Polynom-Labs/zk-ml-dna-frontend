@@ -45,15 +45,15 @@
 
 .title {
   margin: 0;
-  font-size: var(--font-big);
-  font-weight: var(--font-medium);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .name {
-  margin: 0;
-  font-size: var(--font-base);
-  font-weight: var(--font-medium);
-  color: var(--color-text-tertiary);
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .footer {
@@ -62,4 +62,9 @@
   align-items: center;
   justify-content: space-between;
   padding-inline: var(--space-base);
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
 }

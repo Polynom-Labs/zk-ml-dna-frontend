@@ -1,9 +1,15 @@
 "use client";
 import { FC } from "react";
 import cn from "classnames";
+import { Poppins } from "next/font/google";
 import { Atom, HandEye, Users } from "@phosphor-icons/react";
 import { MenuItem, MenuItemName } from "../types";
 import styles from "./MainMenu.module.scss";
+
+const PoppinsFont = Poppins({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+});
 
 type MainMenuProps = {
   className?: string;
@@ -45,7 +51,7 @@ export const MainMenu: FC<MainMenuProps> = ({
     .filter(Boolean);
 
   return (
-    <nav className={cn(styles.menu, className)}>
+    <nav className={cn(styles.menu, PoppinsFont.className, className)}>
       <ul className={cn(styles.list, { [styles.horizontal]: isHorizontal })}>
         {menu.map((item) => (
           <li className={styles.item} key={item?.slug}>
