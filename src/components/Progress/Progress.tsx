@@ -1,37 +1,24 @@
-import { FC } from "react";
-import * as SwitchRadix from "@radix-ui/react-switch";
+import { FC, useEffect, useState } from "react";
+import * as ProgressRadix from "@radix-ui/react-progress";
 import cn from "classnames";
-import styles from "./Switch.module.scss";
+import styles from "./Progress.module.scss";
 
-type ProgressProps = {
-  label?: string;
-  checked?: boolean;
-  className?: string;
-  onChange?: (value: boolean) => void;
-};
+type ProgressProps = {};
 
-export const Progress: FC<ProgressProps> = ({
-  className,
-  label,
-  checked,
-  onChange,
-}) => {
+export const Progress: FC<ProgressProps> = () => {
+  const [progress, setProgress] = useState(13);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setProgress(66), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className={cn(styles.progress, className)}>
-      <SwitchRadix.Root
-        checked={checked}
-        className={styles.SwitchRoot}
-        id="airplane-mode"
-        onCheckedChange={onChange}
-      >
-        <SwitchRadix.Thumb className={styles.SwitchThumb} />
-      </SwitchRadix.Root>
-
-      {label && (
-        <label className={styles.label} htmlFor="airplane-mode">
-          {label}
-        </label>
-      )}
-    </div>
+    <ProgressRadix.Root className={styles.ProgressRoot} value={progress}>
+      <ProgressRadix.Indicator
+        className={styles.ProgressIndicator}
+        style={{ transform: `translateX(-${100 - progress}%)` }}
+      />
+    </ProgressRadix.Root>
   );
 };
