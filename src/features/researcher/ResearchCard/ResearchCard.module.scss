@@ -32,6 +32,11 @@
   color: var(--color-background-alt);
 }
 
+.progress {
+  margin-block: var(--space-base);
+  padding-inline: var(--space-base);
+}
+
 .content {
   margin-block: var(--space-base);
   padding-inline: var(--space-base);

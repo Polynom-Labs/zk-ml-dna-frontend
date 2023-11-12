@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 // import cn from "classnames";
 import { Button } from "@radix-ui/themes";
 import { Pulse } from "@phosphor-icons/react";
+import { Progress } from "@/components/Progress/Progress";
 import { Researcher } from "../types";
 import styles from "./ResearchCard.module.scss";
 
@@ -44,6 +45,10 @@ export const ResearchCard: FC<ResearchCardProps> = ({
         <h1 className={styles.title}>{researcher.title}</h1>
         <p className={styles.name}>{researcher.name}</p>
       </header>
+
+      <div className={styles.progress}>
+        <Progress value={researcher.progress} />
+      </div>
 
       <aside className={styles.info}>
         <div className={styles.status}>
