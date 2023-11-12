@@ -46,7 +46,7 @@ export const ResearchSubmissionLoader: FC<
       for (let i = 0; i < first15.length; i++) {
         const char = convertCharToNumber(first15[i]);
         if (char > -1) {
-          result.push(2**char);
+          result.push(2 ** char);
         }
       }
 
@@ -99,7 +99,12 @@ export const ResearchSubmissionLoader: FC<
         fileTypes={["JPG", "PNG", "GIF"]}
         onChange={handleFileChange}
       />
-      <ProgressActions backUrl="." nextUrl="survey" nextText="Continue" />
+      <ProgressActions
+        backUrl="."
+        nextUrl="survey"
+        nextText="Continue"
+        canNext={!!dnaValue}
+      />
       {isLoading && <LoaderOverflow title="Calculation..." />}
     </Article>
   );
