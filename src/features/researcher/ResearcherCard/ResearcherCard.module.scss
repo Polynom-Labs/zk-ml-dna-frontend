@@ -5,7 +5,8 @@
   position: relative;
   border-radius: 8px;
   padding-block: var(--space-base);
-  background: var(--color-background-alt);
+  border: 1px solid var(--color-border-contrast);
+  background: var(--color-background);
   color: var(--color-text);
   text-decoration: none;
 }

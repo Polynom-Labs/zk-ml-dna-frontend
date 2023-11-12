@@ -1,5 +1,6 @@
 "use client";
 import { FC, useCallback, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
 import { ProgressActions } from "@/components/ProgressActions/ProgressActions";
@@ -13,6 +14,7 @@ type ResearchSurveyLoaderProps = {};
 
 export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
   const stepsList: Step[] = steps;
+  const router = useRouter();
 
   const [dnaValue, setDnaValue, removeDna] = useLocalStorage("dnaCode", "");
   console.log("🚀 ~ dnaValue:", dnaValue);
@@ -24,20 +26,21 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
 
   const { submitBiometricData } = useWallet()();
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     const userData = {
       ...surveyData,
       dnaCode: dnaValue ? JSON.parse(dnaValue) : undefined,
     };
     console.log("DO SOMETHING WITH", userData);
 
-    submitBiometricData(
+    await submitBiometricData(
       surveyData?.age,
       surveyData?.diseased,
       surveyData?.gender,
       userData.dnaCode
     );
-  }, [dnaValue, surveyData]);
+    router.push("./survey");
+  }, [dnaValue, router, submitBiometricData, surveyData]);
 
   return (
     <Article
