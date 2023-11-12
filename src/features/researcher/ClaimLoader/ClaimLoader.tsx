@@ -19,7 +19,7 @@ export const ClaimLoader: FC<ClaimLoaderProps> = () => {
           currentStep="claim-aleo-credits"
           passedSteps={[
             "connect-wallet",
-            "submit-dna",
+            "participate",
             "provide-personal-information",
             "waiting-for-results",
           ]}

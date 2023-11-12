@@ -45,7 +45,7 @@ export const ResearcherCard: FC<ResearcherCardProps> = ({
           {researcher.price && <>{researcher.price} ALEO</>}
         </span>
         <Button variant="solid" radius="full">
-          Submit DNA
+          Participate
         </Button>
       </footer>
     </Link>

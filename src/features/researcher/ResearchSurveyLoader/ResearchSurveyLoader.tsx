@@ -36,7 +36,7 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       surveyData?.diseased,
       surveyData?.gender,
       userData.dnaCode
-    )
+    );
   }, [dnaValue, surveyData]);
 
   return (
@@ -47,7 +47,7 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
         <Stepper
           steps={stepsList}
           currentStep="provide-personal-information"
-          passedSteps={["connect-wallet", "submit-dna"]}
+          passedSteps={["connect-wallet", "participate"]}
         />
       }
       backUrl="./submit"

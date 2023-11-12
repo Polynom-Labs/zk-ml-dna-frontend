@@ -5,6 +5,7 @@ import { useWallet } from "./hooks/useWallet";
 
 import "./Wallet.scss";
 import { useModalStore } from "@/features/modal";
+import { Button } from "@radix-ui/themes";
 
 export const Wallet: FC = () => {
   const { address, icon, disconnect } = useWallet()();
@@ -73,7 +74,9 @@ export const Wallet: FC = () => {
           </div>
         </>
       ) : (
-        "Connect wallet"
+        <Button variant="solid" radius="full" size="3">
+          Connect wallet
+        </Button>
       )}
     </div>
   );

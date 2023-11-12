@@ -88,7 +88,7 @@ export const ResearchSubmissionLoader: FC<
       beforeArticle={
         <Stepper
           steps={stepsList}
-          currentStep="submit-dna"
+          currentStep="participate"
           passedSteps={["connect-wallet"]}
         />
       }

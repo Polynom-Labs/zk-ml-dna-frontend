@@ -19,7 +19,7 @@ export const ResultLoader: FC<ResultLoaderProps> = () => {
           currentStep="waiting-for-results"
           passedSteps={[
             "connect-wallet",
-            "submit-dna",
+            "participate",
             "provide-personal-information",
           ]}
         />

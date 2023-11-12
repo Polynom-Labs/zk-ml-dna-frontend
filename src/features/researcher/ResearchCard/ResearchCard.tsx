@@ -70,7 +70,7 @@ export const ResearchCard: FC<ResearchCardProps> = ({
             size="4"
             className={styles.submit}
           >
-            Submit DNA
+            Participate
           </Button>
         </Link>
       </footer>
