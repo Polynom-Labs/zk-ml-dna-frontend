@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useFormattedAddress } from "./Address.hooks";
 
-import "./Address.scss";
+import styles from "./Address.module.scss";
 
 interface IAddressProps {
   address: string;
@@ -10,5 +10,5 @@ interface IAddressProps {
 export const Address: FC<IAddressProps> = ({ address }) => {
   const formattedAddress = useFormattedAddress(address);
 
-  return <div className="address">{formattedAddress}</div>;
+  return <div className={styles.address}>{formattedAddress}</div>;
 };
