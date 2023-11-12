@@ -3,9 +3,10 @@ import cn from "classnames";
 import { Address } from "./ui/address";
 import { useWallet } from "./hooks/useWallet";
 
-import "./Wallet.scss";
 import { useModalStore } from "@/features/modal";
 import { Button } from "@radix-ui/themes";
+
+import styles from "./Wallet.module.scss";
 
 export const Wallet: FC = () => {
   const { address, icon, disconnect } = useWallet()();
@@ -33,7 +34,7 @@ export const Wallet: FC = () => {
   return (
     <div
       onClick={connectClickCallback}
-      className={cn({ connected: !!address })}
+      className={cn({ [styles.connected]: !!address })}
     >
       {address ? (
         <>
@@ -41,7 +42,7 @@ export const Wallet: FC = () => {
 
           <Address address={address} />
 
-          <div onClick={disconnectHandler} className="disconnect">
+          <div onClick={disconnectHandler} className={styles.disconnect}>
             <svg
               width="16"
               height="16"
