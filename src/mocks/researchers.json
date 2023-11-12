@@ -59,14 +59,14 @@
     "title": "Genetic Variability in Drug Response",
     "name": "PharmacoGenomic Solutions",
     "slug": "drug-response-variability",
-    "photoUrl": "/images/drug-response.png",
+    "photoUrl": "/images/drug-response.jpg",
     "price": 29
   },
   {
     "title": "Genomic Study of Inherited Metabolic Disorders",
     "name": "MetaboGenetics Research Institute",
     "slug": "inherited-metabolic-disorders",
-    "photoUrl": "/images/metabolic-research.png",
+    "photoUrl": "/images/metabolic-research.jpg",
     "price": 31
   },
   {
@@ -80,35 +80,35 @@
     "title": "Genomic Analysis of Rare Pediatric Diseases",
     "name": "PediaGenomics Initiative",
     "slug": "rare-pediatric-diseases",
-    "photoUrl": "/images/pediatric-research.png",
+    "photoUrl": "/images/pediatric-research.webp",
     "price": 33
   },
   {
     "title": "Genetic Markers for Environmental Sensitivity",
     "name": "EnviroGenetics Research Consortium",
     "slug": "environmental-sensitivity-markers",
-    "photoUrl": "/images/environment-genetics.png",
+    "photoUrl": "/images/environment-genetics.webp",
     "price": 26
   },
   {
     "title": "Genomic Basis of Psychopharmacological Response",
     "name": "PsycheGenetics Lab",
     "slug": "psychopharmacological-response-genomics",
-    "photoUrl": "/images/psychopharmacology-research.png",
+    "photoUrl": "/images/psychopharmacology-research.webp",
     "price": 22
   },
   {
     "title": "DNA Analysis for Precision Oncology",
     "name": "OncoGenomic Insights",
     "slug": "precision-oncology-dna",
-    "photoUrl": "/images/oncology-research.png",
+    "photoUrl": "/images/oncology-research.avif",
     "price": 30
   },
   {
     "title": "Genomic Investigation of Rare Immunodeficiencies",
     "name": "ImmunoDeficiency Genomics Initiative",
     "slug": "rare-immunodeficiencies-genomics",
-    "photoUrl": "/images/immunodeficiency-research.png",
+    "photoUrl": "/images/immunodeficiency-research.jpg",
     "price": 28
   }
 ]
