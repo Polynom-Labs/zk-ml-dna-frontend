@@ -16,12 +16,7 @@
   },
   {
     "number": 5,
-    "slug": "waiting-for-results",
-    "text": "Waiting for Results"
-  },
-  {
-    "number": 6,
-    "slug": "claim-aleo-credits",
-    "text": "Claim Aleo Credits"
+    "slug": "done",
+    "text": "Done"
   }
 ]

@@ -2,8 +2,9 @@
 import { FC } from "react";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
-import { ProgressActions } from "@/components/ProgressActions/ProgressActions";
+import { Button } from "@radix-ui/themes";
 import steps from "@/mocks/steps.json";
+import Link from "next/link";
 
 type ResultLoaderProps = {};
 
@@ -12,11 +13,11 @@ export const ResultLoader: FC<ResultLoaderProps> = () => {
 
   return (
     <Article
-      title="Waiting for Results"
+      title="Your data was submitted"
       beforeArticle={
         <Stepper
           steps={stepsList}
-          currentStep="waiting-for-results"
+          currentStep="done"
           passedSteps={[
             "connect-wallet",
             "participate",
@@ -24,14 +25,16 @@ export const ResultLoader: FC<ResultLoaderProps> = () => {
           ]}
         />
       }
-      backUrl="./survey"
+      backUrl="/"
     >
-      <h1 style={{ textAlign: "center", fontSize: "32px" }}>Thank you!</h1>
-      <ProgressActions
-        backUrl="./survey"
-        nextUrl="./claim"
-        nextText="Claim Aleo"
-      />
+      <div style={{ textAlign: "center" }}>
+        <h1 style={{ fontSize: "32px" }}>Thank you!</h1>
+        <Link href="/">
+          <Button variant="solid" radius="full" size="4">
+            See more researches
+          </Button>
+        </Link>
+      </div>
     </Article>
   );
 };

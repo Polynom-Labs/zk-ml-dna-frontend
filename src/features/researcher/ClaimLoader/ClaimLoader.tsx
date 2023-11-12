@@ -21,7 +21,7 @@ export const ClaimLoader: FC<ClaimLoaderProps> = () => {
             "connect-wallet",
             "participate",
             "provide-personal-information",
-            "waiting-for-results",
+            "done",
           ]}
         />
       }
