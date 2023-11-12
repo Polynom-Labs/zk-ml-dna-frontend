@@ -17,10 +17,8 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
   const [isSigned, setIsSigned] = useState(false);
 
   const [dnaValue, setDnaValue, removeDna] = useLocalStorage("dnaCode", "");
-  console.log("🚀 ~ dnaValue:", dnaValue);
 
   const [surveyData, setSurveyData] = useState<Survey | null>(null);
-  console.log("🚀 ~ surveyData:", surveyData);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -31,7 +29,6 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       ...surveyData,
       dnaCode: dnaValue ? JSON.parse(dnaValue) : undefined,
     };
-    console.log("DO SOMETHING WITH", userData);
     console.log("start magic");
 
     submitBiometricData(
