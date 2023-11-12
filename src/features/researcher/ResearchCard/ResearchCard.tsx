@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 // import cn from "classnames";
@@ -19,6 +19,10 @@ export const ResearchCard: FC<ResearchCardProps> = ({
 }) => {
   const { research } = useParams();
   console.log("🚀 ~ research:", research);
+
+  const dsc = useMemo(() => {
+    return researcher.description?.split("\n");
+  }, [researcher.description]);
 
   return (
     <div className={styles.predisposition}>
@@ -55,7 +59,7 @@ export const ResearchCard: FC<ResearchCardProps> = ({
       {researcher.description && (
         <section className={styles.description}>
           <h3>Research Description</h3>
-          <p>{researcher.description}</p>
+          {dsc && dsc.map((d, i) => <p key={i}>{d}</p>)}
         </section>
       )}
 

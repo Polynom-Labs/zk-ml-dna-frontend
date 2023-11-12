@@ -1,11 +1,11 @@
 {
-  "title": "Cancer Predisposition",
-  "name": "DNAStudio",
-  "slug": "cancer-predisposition",
-  "photoUrl": "/images/laboratory.png",
+  "title": "DNA Analysis for Precision Oncology",
+  "name": "GenoHealth Analytics",
+  "slug": "metabolic-vulnerability-cardio",
+  "photoUrl": "/images/laboratory.jpg",
   "price": 24,
   "status": "available",
   "submissions": 43,
   "progress": 11,
-  "description": "This decentralized research platform allows users to connect with researchers. submit signed DNA samples, and predict disease predisposition. submit signed DNA samples, and predict disease predisposition. This decentralized research platform allows users to connect with researchers. submit signed DNA samples, and predict disease predisposition. submit signed DNA samples, and predict disease predisposition. This decentralized research platform allows users to connect with researchers. submit signed DNA samples, and predict disease."
+  "description": "The \"DNA Analysis for Precision Oncology\" research delves into a groundbreaking approach to cancer treatment by leveraging detailed DNA analysis. This study focuses on customizing oncological interventions based on an individual's genetic makeup, aiming to revolutionize cancer care.\nThrough advanced genomic analysis, the research scrutinizes the specific genetic mutations and alterations within tumors, tailoring treatment strategies to the unique genetic profile of each patient. By understanding the intricate molecular landscape of the tumor, oncologists can identify specific genetic biomarkers that influence the cancer's behavior, prognosis, and response to various treatments.\nThis study seeks to not only enhance the accuracy of cancer diagnoses but also to optimize treatment selection. With a comprehensive understanding of the genetic blueprint of the cancer, oncologists can select the most effective therapies while minimizing the likelihood of adverse effects. Additionally, the research aims to predict the potential development of drug resistance, allowing for proactive adjustments in treatment plans.\nFurthermore, the study explores the potential for targeted therapies and precision medicine. By pinpointing specific genetic vulnerabilities within the cancer cells, the research opens avenues for tailored treatments, such as targeted therapies or immunotherapies, potentially improving outcomes and minimizing the impact on healthy cells.\nThe ultimate goal of \"DNA Analysis for Precision Oncology\" is to shift the paradigm of cancer treatment from a generalized approach to a highly personalized and targeted strategy, potentially significantly improving the effectiveness of cancer therapies and the overall quality of patient care."
 }

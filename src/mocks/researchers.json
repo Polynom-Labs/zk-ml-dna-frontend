@@ -1,64 +1,114 @@
 [
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "photoUrl": "/images/laboratory.png",
+    "title": "DNA Analysis for Precision Oncology",
+    "name": "GenoHealth Analytics",
+    "slug": "metabolic-vulnerability-cardio",
+    "photoUrl": "/images/laboratory.jpg",
     "price": 24
   },
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "photoUrl": "/images/laboratory.png",
-    "price": 24
+    "title": "Genomic Study of Cancer Mutations",
+    "name": "OncogeneXplore Genetics",
+    "slug": "cancer-mutations",
+    "photoUrl": "/images/cancer-research.jpg",
+    "price": 28
   },
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "photoUrl": "/images/laboratory.png",
-    "price": 24
+    "title": "DNA Diagnostics of Rare Genetic Disorders",
+    "name": "RareGenetic Diagnostics",
+    "slug": "rare-genetic-disorders",
+    "photoUrl": "/images/dna-helix.jpg",
+    "price": 30
   },
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "photoUrl": "/images/laboratory.png",
-    "price": 24
+    "title": "Epigenetic Mechanisms of Aging",
+    "name": "AgeWise Genetics",
+    "slug": "aging-epigenetics",
+    "photoUrl": "/images/aging-study.webp",
+    "price": 22
   },
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "photoUrl": "/images/laboratory.png",
-    "price": 24
+    "title": "Genomic Basis of Neurodegenerative Diseases",
+    "name": "NeuroGenomics Institute",
+    "slug": "neurodegenerative-diseases",
+    "photoUrl": "/images/neuro-research.jpg",
+    "price": 26
   },
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "photoUrl": "/images/laboratory.png",
-    "price": 24
+    "title": "Genetics of Athletic Endurance",
+    "name": "SportsGenetics Research Center",
+    "slug": "athletic-endurance",
+    "photoUrl": "/images/sports-genetics.jpg",
+    "price": 32
   },
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "photoUrl": "/images/laboratory.png",
-    "price": 24
+    "title": "Genomic Analysis of Mental Disorders",
+    "name": "MindGenetics Solutions",
+    "slug": "mental-disorders-genomics",
+    "photoUrl": "/images/mental-health-research.jpg",
+    "price": 20
   },
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "price": 24
+    "title": "DNA Profiling of Infection Resistance",
+    "name": "ImmunoGenetics Innovations",
+    "slug": "infection-resistance-dna",
+    "photoUrl": "/images/infection-research.png",
+    "price": 25
   },
   {
-    "title": "Cancer Predisposition",
-    "name": "DNAStudio",
-    "slug": "cancer-predisposition",
-    "photoUrl": "/images/laboratory.png",
-    "price": 24
+    "title": "Genetic Variability in Drug Response",
+    "name": "PharmacoGenomic Solutions",
+    "slug": "drug-response-variability",
+    "photoUrl": "/images/drug-response.jpg",
+    "price": 29
+  },
+  {
+    "title": "Genomic Study of Inherited Metabolic Disorders",
+    "name": "MetaboGenetics Research Institute",
+    "slug": "inherited-metabolic-disorders",
+    "photoUrl": "/images/metabolic-research.jpg",
+    "price": 31
+  },
+  {
+    "title": "DNA Profiling for Precision Nutrition",
+    "name": "NutriGenomic Insights",
+    "slug": "precision-nutrition-dna",
+    "photoUrl": "/images/nutrition-research.png",
+    "price": 27
+  },
+  {
+    "title": "Genomic Analysis of Rare Pediatric Diseases",
+    "name": "PediaGenomics Initiative",
+    "slug": "rare-pediatric-diseases",
+    "photoUrl": "/images/pediatric-research.webp",
+    "price": 33
+  },
+  {
+    "title": "Genetic Markers for Environmental Sensitivity",
+    "name": "EnviroGenetics Research Consortium",
+    "slug": "environmental-sensitivity-markers",
+    "photoUrl": "/images/environment-genetics.webp",
+    "price": 26
+  },
+  {
+    "title": "Genomic Basis of Psychopharmacological Response",
+    "name": "PsycheGenetics Lab",
+    "slug": "psychopharmacological-response-genomics",
+    "photoUrl": "/images/psychopharmacology-research.webp",
+    "price": 22
+  },
+  {
+    "title": "DNA Analysis for Precision Oncology",
+    "name": "OncoGenomic Insights",
+    "slug": "precision-oncology-dna",
+    "photoUrl": "/images/oncology-research.avif",
+    "price": 30
+  },
+  {
+    "title": "Genomic Investigation of Rare Immunodeficiencies",
+    "name": "ImmunoDeficiency Genomics Initiative",
+    "slug": "rare-immunodeficiencies-genomics",
+    "photoUrl": "/images/immunodeficiency-research.jpg",
+    "price": 28
   }
 ]

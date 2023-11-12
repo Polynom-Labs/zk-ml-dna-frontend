@@ -44,7 +44,7 @@ export const ResearcherCard: FC<ResearcherCardProps> = ({
         <span className={styles.price}>
           {researcher.price && <>{researcher.price} ALEO</>}
         </span>
-        <Button variant="solid" radius="full">
+        <Button variant="outline" radius="full">
           Participate
         </Button>
       </footer>

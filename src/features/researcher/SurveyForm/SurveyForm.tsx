@@ -39,7 +39,7 @@ export const SurveyForm: FC<SurveyFormProps> = ({ onchange }) => {
       <div className={formStyles.row}>
         <Form.Field name="roomName" className={formStyles.field}>
           <label className={styles.label}>
-            Diseased
+            Have you ever had pancreatic cancer?
             <input
               type="checkbox"
               onChange={(e) => setIsDiseased(e.target.checked)}
@@ -55,7 +55,6 @@ export const SurveyForm: FC<SurveyFormProps> = ({ onchange }) => {
             <input
               type="radio"
               name="gender"
-              checked
               onChange={(e) => setIsMale(e.target.value === "on")}
             />{" "}
             Male
