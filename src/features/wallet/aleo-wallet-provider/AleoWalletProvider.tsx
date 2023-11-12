@@ -29,6 +29,55 @@ const TRANSACTION_FEE = 5_500_000;
 //     });
 // })();
 
+class AnswersStruct {
+  diseased: string;
+  age: string;
+  gender: string;
+
+  constructor(diseased: number, age: number, gender: number) {
+    this.diseased = diseased + "i8";
+    this.age = age + "i8";
+    this.gender = gender + "i8";
+  }
+}
+
+class BiometricStruct {
+  x0: string;
+  x1: string;
+  x2: string;
+  x3: string;
+  x4: string;
+  x5: string;
+  x6: string;
+  x7: string;
+  x8: string;
+  x9: string;
+  x10: string;
+  x11: string;
+  x12: string;
+  x13: string;
+  x14: string;
+
+  constructor(
+    data: Array<number>
+  ) {
+    this.x0 = data[0] + "i8";
+    this.x1 = data[1] + "i8";
+    this.x2 = data[2] + "i8";
+    this.x3 = data[3] + "i8";
+    this.x4 = data[4] + "i8";
+    this.x5 = data[5] + "i8";
+    this.x6 = data[6] + "i8";
+    this.x7 = data[7] + "i8";
+    this.x8 = data[8] + "i8";
+    this.x9 = data[9] + "i8";
+    this.x10 = data[10] + "i8";
+    this.x11 = data[11] + "i8";
+    this.x12 = data[12] + "i8";
+    this.x13 = data[13] + "i8";
+    this.x14 = data[14] + "i8";
+  }
+}
 export const AleoWalletProvider: FC<any> = ({ children }) => {
   const {
     publicKey,
@@ -141,36 +190,15 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
 
             if (publicKey) {
               // struct sample:
-              // "{diseased: 0i8, age: 50i8, gender:1i8}"
-                let answers_struct = {
-                  diseased: diseased + "i8", 
-                  age: age + 'i8', 
-                  gender: gender + 'i8'
-                };
+              let answers_struct =  new AnswersStruct(diseased, age, gender);
 
-                // struct sample:
-                // {x0:1i8,x1:1i8,x2:0i8,x3:3i8,x4:2i8,x5:1i8,x6:1i8,x7:1i8,x8:0i8,x9:1i8,x10:2i8,x11:3i8,x12:1i8,x13:1i8,x14:1i8}
-                let biometrict_struct = {
-                    x0: biometric_data[0] + "i8",
-                    x1: biometric_data[1] + "i8",
-                    x2: biometric_data[2] + "i8",
-                    x3: biometric_data[3] + "i8",
-                    x4: biometric_data[4] + "i8",
-                    x5: biometric_data[5] + "i8",
-                    x6: biometric_data[6] + "i8",
-                    x7: biometric_data[7] + "i8",
-                    x8: biometric_data[8] + "i8",
-                    x9: biometric_data[9] + "i8",
-                    x10: biometric_data[10] + "i8",
-                    x11: biometric_data[11] + "i8",
-                    x12: biometric_data[12] + "i8",
-                    x13: biometric_data[13] + "i8",
-                    x14: biometric_data[14] + "i8"
-                };
+                let biometrict_struct = new BiometricStruct(biometric_data);
                 const inputs = [
-                    answers_struct,
-                    biometrict_struct
+                    JSON.stringify(answers_struct),
+                    JSON.stringify(biometrict_struct)
                 ];
+
+                console.log('aleo inputs: ' + JSON.stringify(inputs));
 
                 const aleoTransaction = Transaction.createTransaction(
                     publicKey,
@@ -178,8 +206,11 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
                     "zk_ml_dna_v0.aleo",
                     "submit",
                     inputs,
-                    1_500_000,
+                    TRANSACTION_FEE,
+                    false
                 );
+
+                console.log('aleo tx: ' + JSON.stringify(aleoTransaction));
 
                 if (requestTransaction) {
                     const txId = await requestTransaction(aleoTransaction);

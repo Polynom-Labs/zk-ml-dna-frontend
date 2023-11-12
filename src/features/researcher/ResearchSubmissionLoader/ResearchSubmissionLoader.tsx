@@ -46,7 +46,7 @@ export const ResearchSubmissionLoader: FC<
       for (let i = 0; i < first15.length; i++) {
         const char = convertCharToNumber(first15[i]);
         if (char > -1) {
-          result.push(char);
+          result.push(2**char);
         }
       }
 
