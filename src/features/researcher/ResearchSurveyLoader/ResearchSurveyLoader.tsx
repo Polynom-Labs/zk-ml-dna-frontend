@@ -1,6 +1,5 @@
 "use client";
 import { FC, useCallback, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
 import { ProgressActions } from "@/components/ProgressActions/ProgressActions";
@@ -14,7 +13,8 @@ type ResearchSurveyLoaderProps = {};
 
 export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
   const stepsList: Step[] = steps;
-  const router = useRouter();
+
+  const [isSigned, setIsSigned] = useState(false);
 
   const [dnaValue, setDnaValue, removeDna] = useLocalStorage("dnaCode", "");
   console.log("🚀 ~ dnaValue:", dnaValue);
@@ -41,8 +41,8 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       userData.dnaCode
     );
     console.log("finish magic");
-    router.push("./result");
-  }, [dnaValue, router, submitBiometricData, surveyData]);
+    setIsSigned(true);
+  }, [dnaValue, submitBiometricData, surveyData]);
 
   return (
     <Article
@@ -58,7 +58,16 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       backUrl="./submit"
     >
       <SurveyForm onchange={setSurveyData} />
-      <ProgressActions backUrl="./submit" onSubmit={handleSubmit} />
+      {!isSigned ? (
+        <ProgressActions backUrl="./submit" onSubmit={handleSubmit} />
+      ) : (
+        <ProgressActions
+          backUrl="./submit"
+          nextUrl="./result"
+          nextText="Continue"
+        />
+      )}
+
       {isLoading && <LoaderOverflow title="Calculation..." />}
     </Article>
   );
