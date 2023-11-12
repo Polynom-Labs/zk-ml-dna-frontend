@@ -26,7 +26,7 @@ export const ResultLoader: FC<ResultLoaderProps> = () => {
       }
       backUrl="./survey"
     >
-      <h1>Thank you!</h1>
+      <h1 style={{ textAlign: "center", fontSize: "32px" }}>Thank you!</h1>
       <ProgressActions
         backUrl="./survey"
         nextUrl="./claim"
