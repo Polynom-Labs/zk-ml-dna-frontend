@@ -15,8 +15,8 @@ export const HeaderActions: FC<HeaderActionsProps> = ({ className }) => {
       {/* <div className={styles.wallet}>
         <Wallet />
       </div> */}
-      {/* <HeaderUser /> */}
-      <Wallet />
+      <HeaderUser />
+      {/* <Wallet /> */}
     </Flex>
   );
 };
