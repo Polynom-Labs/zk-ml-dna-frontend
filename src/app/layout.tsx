@@ -54,9 +54,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             scrollbars="vertical"
             style={{ height: "100vh" }}
           >
-            <MainLayout>
-              <Providers>{children}</Providers>
-            </MainLayout>
+            <Providers>
+              <MainLayout>{children}</MainLayout>
+            </Providers>
           </ScrollArea>
         </Theme>
       </body>

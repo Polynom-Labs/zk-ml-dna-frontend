@@ -34,7 +34,7 @@ export const Wallet: FC = () => {
   return (
     <div
       onClick={connectClickCallback}
-      className={cn({ [styles.connected]: !!address })}
+      className={cn(styles.wallet, { [styles.connected]: !!address })}
     >
       {address ? (
         <>
@@ -75,9 +75,7 @@ export const Wallet: FC = () => {
           </div>
         </>
       ) : (
-        <Button variant="solid" radius="full" size="3">
-          Connect wallet
-        </Button>
+        <>Connect wallet</>
       )}
     </div>
   );

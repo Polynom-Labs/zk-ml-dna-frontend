@@ -20,7 +20,7 @@ export const ResearchSubmissionLoader: FC<
   const [files, setFiles] = useState<File[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [dnaData, setDnaData] = useState<string>("");
-  console.log("🚀 ~ dnaData:", dnaData);
+  // console.log("🚀 ~ dnaData:", dnaData);
   const [dnaCode, setDnaCode] = useState<number[]>([]);
   console.log("🚀 ~ dnaCode:", dnaCode);
 
