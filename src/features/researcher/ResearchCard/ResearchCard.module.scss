@@ -1,14 +1,15 @@
 .predisposition {
   position: relative;
   border-radius: 8px;
-  padding-block: var(--space-base);
+  padding-block: var(--space-big);
   border: 1px solid var(--color-border-contrast);
   background: var(--color-background);
 }
 
 .media {
   height: 360px;
-  margin-inline: var(--space-base);
+  margin-block-end: 32px;
+  margin-inline: var(--space-big);
   border-radius: 4px;
   background: var(--color-text-tertiary);
   text-align: center;
@@ -32,46 +33,73 @@
   color: var(--color-background-alt);
 }
 
-.progress {
-  margin-block: var(--space-base);
-  padding-inline: var(--space-base);
-}
-
 .content {
-  margin-block: var(--space-base);
-  padding-inline: var(--space-base);
+  margin-block: var(--space-big);
+  padding-inline: var(--space-big);
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0;
-  font-size: var(--font-large);
-  font-weight: var(--font-medium);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-text-primary);
+  border-radius: 50%;
+  font-size: 18px;
 }
 
 .info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-block: var(--space-base);
-  padding-inline: var(--space-base);
+  margin-block: var(--space-big);
+  padding-inline: var(--space-big);
 }
 
 .badge {
   padding: 12px var(--space-base);
+  border: 1px solid var(--color-text-primary);
   border-radius: 24px;
-  background: var(--color-text-tertiary);
+}
+
+.price {
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .name {
   margin: 0;
-  font-size: var(--font-base);
-  font-weight: var(--font-medium);
-  color: var(--color-text-tertiary);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.progress {
+  margin-block: var(--space-big);
+  padding-inline: var(--space-big);
+}
+
+.percent {
+  margin-top: 8px;
+}
+
+.dscTitle {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .description {
-  margin-block: var(--space-base);
-  padding-inline: var(--space-base);
+  margin-block: var(--space-big);
+  padding-inline: var(--space-big);
 }
 
 .footer {
