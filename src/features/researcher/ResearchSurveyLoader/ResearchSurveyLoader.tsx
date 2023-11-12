@@ -32,14 +32,16 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       dnaCode: dnaValue ? JSON.parse(dnaValue) : undefined,
     };
     console.log("DO SOMETHING WITH", userData);
+    console.log("start magic");
 
-    await submitBiometricData(
+    submitBiometricData(
       surveyData?.age,
       surveyData?.diseased,
       surveyData?.gender,
       userData.dnaCode
     );
-    router.push("./survey");
+    console.log("finish magic");
+    router.push("./result");
   }, [dnaValue, router, submitBiometricData, surveyData]);
 
   return (
