@@ -13,7 +13,6 @@ type ResearchCreateLoaderProps = {};
 
 export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
   const { address } = useWallet()();
-  console.log("🚀 ~ address:", address);
   const [researchData, setResearchData] = useState<NewResearch | null>(null);
 
   const [isLoading, setIsLoading] = useState(false);

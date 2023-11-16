@@ -2,6 +2,7 @@
 import { FC, useEffect, useMemo, useState } from "react";
 import cn from "classnames";
 import * as Form from "@radix-ui/react-form";
+import Input from "@/components/Input/Input";
 import formStyles from "@/styles/form.module.scss";
 import styles from "./SurveyForm.module.scss";
 
@@ -104,7 +105,7 @@ export const SurveyForm: FC<SurveyFormProps> = ({ onChange }) => {
           <div className={formStyles.main}>
             <div className={formStyles.controls}>
               <Form.Control asChild>
-                <input
+                <Input
                   type="number"
                   value={age}
                   className={cn(formStyles.input, styles.ageInput)}

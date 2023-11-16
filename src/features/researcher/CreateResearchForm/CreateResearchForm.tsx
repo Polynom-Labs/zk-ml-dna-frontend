@@ -2,9 +2,11 @@
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import cn from "classnames";
 import * as Form from "@radix-ui/react-form";
+import FileInput from "@/components/FileInput/FileInput";
+import Input from "@/components/Input/Input";
+import TextArea from "@/components/TextArea/TextArea";
 import formStyles from "@/styles/form.module.scss";
 import styles from "./CreateResearchForm.module.scss";
-import FileInput from "@/components/FileInput/FileInput";
 
 export type NewResearch = {
   title: string;
@@ -31,7 +33,6 @@ export const CreateResearchForm: FC<CreateResearchFormProps> = ({
       draft: isDraft ? 1 : 0,
     };
   }, [title, description, isDraft]);
-  console.log("🚀 ~ transformedData ~ transformedData:", transformedData);
 
   const handleFileChange = useCallback((files: File[]) => {
     setFiles(files);
@@ -43,7 +44,7 @@ export const CreateResearchForm: FC<CreateResearchFormProps> = ({
   }, [onChange, transformedData]);
 
   return (
-    <Form.Root className={cn(formStyles.form, styles.survey)}>
+    <Form.Root className={cn(formStyles.form, styles.researchForm)}>
       <div className={formStyles.row}>
         <Form.Field name="title" className={formStyles.field}>
           <div className={formStyles.side}>
@@ -52,7 +53,7 @@ export const CreateResearchForm: FC<CreateResearchFormProps> = ({
           <div className={formStyles.main}>
             <div className={formStyles.controls}>
               <Form.Control asChild>
-                <input
+                <Input
                   type="text"
                   value={title}
                   className={cn(formStyles.input)}
@@ -75,7 +76,7 @@ export const CreateResearchForm: FC<CreateResearchFormProps> = ({
           <div className={formStyles.main}>
             <div className={formStyles.controls}>
               <Form.Control asChild>
-                <textarea
+                <TextArea
                   value={description}
                   className={cn(formStyles.textarea)}
                   onChange={(event) => setDescription(event.target.value)}

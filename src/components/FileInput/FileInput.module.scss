@@ -84,7 +84,7 @@
   padding: var(--space-base);
 
   .compact & {
-    min-height: 40px;
+    min-height: var(--control-height);
     padding: var(--space-tiny);
   }
 }
