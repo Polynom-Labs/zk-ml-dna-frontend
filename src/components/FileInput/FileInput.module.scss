@@ -1,8 +1,16 @@
 .fileInput {
   --file-preview-size: 140px;
 
+  flex: 1;
   position: relative;
   margin-block: 40px;
+  color: var(--color-text-secondary);
+}
+
+.compact {
+  margin: 0;
+  font-size: var(--font-base);
+  font-weight: 400;
 }
 
 .area,
@@ -10,6 +18,11 @@
   border: 1px dashed var(--color-text-secondary);
   border-radius: 16px;
   background: var(--color-background-alt);
+
+  .compact & {
+    border: 1px solid var(--color-border);
+    border-radius: var(--control-radius, 4px);
+  }
 }
 
 .active {
@@ -21,12 +34,26 @@
   padding: 60px 40px;
   text-align: center;
   line-height: 1.2;
+
+  .compact & {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-small);
+    padding: var(--space-tiny) var(--space-base);
+  }
 }
 
 .title {
-  color: var(--color-text-secondary);
   font-size: var(--font-title);
   font-weight: bold;
+
+  .compact & {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
 }
 
 .or {
@@ -34,6 +61,13 @@
   color: var(--color-text-tertiary);
   font-size: var(--font-base);
   font-weight: bold;
+
+  .compact & {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
 }
 
 .button {
@@ -48,6 +82,11 @@
   gap: var(--space-base);
   min-height: 274px;
   padding: var(--space-base);
+
+  .compact & {
+    min-height: 40px;
+    padding: var(--space-tiny);
+  }
 }
 
 .file {
@@ -61,6 +100,13 @@
   border-radius: 8px;
   background: var(--color-brand);
   color: var(--color-text-alt);
+
+  .compact & {
+    width: auto;
+    height: auto;
+    padding-inline: var(--space-small) var(--space-big);
+    border-radius: var(--control-radius);
+  }
 }
 
 .ext {
@@ -70,6 +116,10 @@
 
 .fileName {
   font-size: var(--font-base);
+
+  .compact & {
+    font-size: var(--font-small);
+  }
 }
 
 .delete {
@@ -83,4 +133,10 @@
   color: inherit;
   font-size: 24px;
   cursor: pointer;
+
+  .compact & {
+    inset-block-start: 3px;
+    inset-inline-end: 4px;
+    font-size: 12px;
+  }
 }

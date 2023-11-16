@@ -1,9 +1,10 @@
 "use client";
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import cn from "classnames";
 import * as Form from "@radix-ui/react-form";
 import formStyles from "@/styles/form.module.scss";
 import styles from "./CreateResearchForm.module.scss";
+import FileInput from "@/components/FileInput/FileInput";
 
 export type NewResearch = {
   title: string;
@@ -20,6 +21,7 @@ export const CreateResearchForm: FC<CreateResearchFormProps> = ({
 }) => {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+  const [files, setFiles] = useState<File[]>([]);
   const [isDraft, setIsDraft] = useState(false);
 
   const transformedData = useMemo((): NewResearch => {
@@ -30,6 +32,11 @@ export const CreateResearchForm: FC<CreateResearchFormProps> = ({
     };
   }, [title, description, isDraft]);
   console.log("🚀 ~ transformedData ~ transformedData:", transformedData);
+
+  const handleFileChange = useCallback((files: File[]) => {
+    setFiles(files);
+    if (!files[0]) return;
+  }, []);
 
   useEffect(() => {
     onChange(transformedData);
@@ -87,7 +94,13 @@ export const CreateResearchForm: FC<CreateResearchFormProps> = ({
           <div className={formStyles.main}>
             <div className={formStyles.controls}>
               <Form.Control asChild>
-                <input type="file" />
+                <FileInput
+                  idCompact
+                  nameLimit={16}
+                  selectedFiles={files}
+                  fileTypes={["JPG", "PNG", "GIF"]}
+                  onChange={handleFileChange}
+                />
               </Form.Control>
             </div>
             <div className={formStyles.info}>Please, load your research</div>

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useLocalStorage } from "react-use";
 import { Article } from "@/components/Article/Article";
 import { Step, Stepper } from "@/components/Stepper/Stepper";
-import { FileInput } from "@/components/FileInput/FileInput";
+import FileInput from "@/components/FileInput/FileInput";
 import { ProgressActions } from "@/components/ProgressActions/ProgressActions";
 import { LoaderOverflow } from "@/components/LoaderOverflow/LoaderOverflow";
 import steps from "@/mocks/steps.json";
