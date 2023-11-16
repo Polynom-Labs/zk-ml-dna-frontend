@@ -1,5 +1,6 @@
 .fileInput {
   --file-preview-size: 140px;
+  --vertical-padding: 60px;
 
   flex: 1;
   position: relative;
@@ -31,7 +32,7 @@
 }
 
 .content {
-  padding: 60px 40px;
+  padding: var(--vertical-padding) 40px;
   text-align: center;
   line-height: 1.2;
 
@@ -41,7 +42,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-small);
-    padding: var(--space-tiny) var(--space-base);
+    padding-inline: var(--space-base);
   }
 }
 
@@ -85,7 +86,7 @@
 
   .compact & {
     min-height: var(--control-height);
-    padding: var(--space-tiny);
+    padding: var(--vertical-padding) var(--space-tiny);
   }
 }
 

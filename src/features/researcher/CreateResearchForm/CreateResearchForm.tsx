@@ -11,6 +11,7 @@ import styles from "./CreateResearchForm.module.scss";
 export type NewResearch = {
   title: string;
   description?: string;
+  files: File[];
   draft: 0 | 1;
 };
 
@@ -30,9 +31,10 @@ export const CreateResearchForm: FC<CreateResearchFormProps> = ({
     return {
       title,
       description,
+      files,
       draft: isDraft ? 1 : 0,
     };
-  }, [title, description, isDraft]);
+  }, [title, description, files, isDraft]);
 
   const handleFileChange = useCallback((files: File[]) => {
     setFiles(files);

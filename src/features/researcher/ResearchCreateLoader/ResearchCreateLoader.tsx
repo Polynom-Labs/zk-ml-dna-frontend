@@ -12,14 +12,18 @@ import { LoaderOverflow } from "@/components/LoaderOverflow/LoaderOverflow";
 type ResearchCreateLoaderProps = {};
 
 export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
-  const { address } = useWallet()();
   const [researchData, setResearchData] = useState<NewResearch | null>(null);
 
   const [isLoading, setIsLoading] = useState(false);
 
   const isDataValid = useMemo(() => {
-    return !!researchData?.title && researchData?.title?.length > 5;
-  }, [researchData]);
+    return (
+      !!researchData?.title &&
+      researchData?.title?.length >= 5 &&
+      !!researchData?.files &&
+      researchData?.files?.length > 0
+    );
+  }, [researchData?.files, researchData?.title]);
 
   const handleSubmit = useCallback(async () => {
     setIsLoading(true);
