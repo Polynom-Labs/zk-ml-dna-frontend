@@ -53,8 +53,9 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
         />
       }
       backUrl="./submit"
+      isProtected
     >
-      <SurveyForm onchange={setSurveyData} />
+      <SurveyForm onChange={setSurveyData} />
       {!isSigned ? (
         <ProgressActions backUrl="./submit" onSubmit={handleSubmit} />
       ) : (

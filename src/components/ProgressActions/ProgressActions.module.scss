@@ -11,8 +11,12 @@
 }
 
 .back,
-.continue {
+.next {
   cursor: pointer;
+}
+
+.next {
+  margin-inline-start: auto;
 }
 
 .disabled {

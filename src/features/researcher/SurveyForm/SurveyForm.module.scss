@@ -1,19 +1,8 @@
 .survey {
+  --form-side-width: 240px;
   --form-control-height: 32px;
 
   padding-inline-start: 32px;
-}
-
-.ageField {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.label {
-  &:not(:first-child) {
-    margin-inline-start: var(--space-small);
-  }
 }
 
 .ageInput {

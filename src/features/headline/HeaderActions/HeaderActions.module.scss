@@ -1,6 +1,28 @@
 @import "@/styles/_mixins.module";
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-base);
+}
+
 .wallet {
+  @include device(mobile) {
+    display: none;
+  }
+}
+
+.upload {
+  @include device(miniMobile) {
+    display: none;
+  }
+}
+
+.uploadButton {
+  cursor: pointer;
+}
+
+.uploadExtended {
   @include device(mobile) {
     display: none;
   }

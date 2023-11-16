@@ -24,7 +24,7 @@ export const ProgressActions: FC<ProgressActionsProps> = ({
   nextText = "Submit",
   onSubmit,
 }) => {
-  if (!backUrl && !nextUrl) return null;
+  if (!backUrl && !(nextUrl || onSubmit)) return null;
 
   return (
     <div className={styles.progress}>
@@ -50,7 +50,7 @@ export const ProgressActions: FC<ProgressActionsProps> = ({
               radius="full"
               size="4"
               disabled={!canNext}
-              className={cn(styles.continue, {
+              className={cn(styles.next, {
                 [styles.disabled]: !canNext,
               })}
             >
@@ -65,7 +65,7 @@ export const ProgressActions: FC<ProgressActionsProps> = ({
             size="4"
             disabled={!canNext}
             onClick={onSubmit}
-            className={cn(styles.continue, {
+            className={cn(styles.next, {
               [styles.disabled]: !canNext,
             })}
           >

@@ -26,6 +26,7 @@ export const ClaimLoader: FC<ClaimLoaderProps> = () => {
         />
       }
       backUrl="./result"
+      isProtected
     >
       <h1>Some content about the claim</h1>
       <ProgressActions backUrl="./result" nextUrl="/" nextText="Claim" />

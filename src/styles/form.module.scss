@@ -1,22 +1,17 @@
 @import "./_mixins.module";
 
-.form {
-  --label-gap: var(--form-label-gap, 4px);
-  --control-height: var(--form-control-height, 48px);
-  --control-radius: var(--form-control-radius, 8px);
-  --control-inline-padding: var(--form-control-inline-padding, 16px);
-}
-
 .row {
+  --side-width: var(--form-side-width, 140px);
+  --control-height: var(--form-control-height, 38px);
+  --textarea-height: var(--form-textarea-height, 64px);
+
   display: flex;
   justify-self: stretch;
   gap: var(--space-big);
   max-width: 600px;
   width: 100%;
-
-  & + & {
-    margin-block-start: var(--space-big);
-  }
+  padding-block: var(--space-base);
+  border-block-start: 1px solid var(--color-border);
 
   @include device(mobile) {
     display: block;
@@ -31,24 +26,74 @@
       margin-block-start: var(--space-big);
     }
   }
+
+  @include device(notMobile) {
+    display: flex;
+  }
 }
 
-.input {
-  flex: 1;
-  width: 100%;
-  height: var(--control-height);
-  padding-inline: var(--control-inline-padding);
-  border-radius: var(--control-radius);
-  border: 1px solid var(--color-border-contrast);
+.side {
+  @include device(mobile) {
+    margin-block-end: var(--space-tiny);
+  }
 
-  &:focus {
-    border-color: var(--color-focus);
-    outline-color: var(--color-focus);
+  @include device(notMobile) {
+    flex: 0 0 var(--side-width);
+    padding-inline-end: var(--space-small);
   }
 }
 
 .label {
-  display: block;
-  margin-block: 0 var(--label-gap);
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  min-height: var(--control-height);
+  font-weight: 500;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message,
+.info {
+  margin-block-start: var(--space-small);
+  color: var(--color-text-secondary);
+  font-size: var(--font-tiny);
+}
+
+.message {
+  &.error {
+    color: var(--color-danger);
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.inlineLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+
+  &:not(:first-child) {
+    margin-inline-start: var(--space-base);
+  }
+
+  input {
+    margin: 0;
+  }
+}
+
+.input {
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  height: var(--textarea-height);
 }

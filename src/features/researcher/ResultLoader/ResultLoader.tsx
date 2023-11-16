@@ -26,6 +26,7 @@ export const ResultLoader: FC<ResultLoaderProps> = () => {
         />
       }
       backUrl="/"
+      isProtected
     >
       <div style={{ textAlign: "center" }}>
         <div>

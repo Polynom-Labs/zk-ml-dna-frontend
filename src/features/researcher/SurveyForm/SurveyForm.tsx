@@ -12,11 +12,10 @@ export type Survey = {
 };
 
 type SurveyFormProps = {
-  onchange: (data: any) => void;
+  onChange: (data: any) => void;
 };
 
-export const SurveyForm: FC<SurveyFormProps> = ({ onchange }) => {
-  const [isLoading, setIsLoading] = useState(false);
+export const SurveyForm: FC<SurveyFormProps> = ({ onChange }) => {
   const [isDiseased, setIsDiseased] = useState(false);
   const [isMale, setIsMale] = useState(false);
   const [age, setAge] = useState<string>("");
@@ -31,52 +30,66 @@ export const SurveyForm: FC<SurveyFormProps> = ({ onchange }) => {
   }, [age, isDiseased, isMale]);
 
   useEffect(() => {
-    onchange(transformedData);
-  }, [onchange, transformedData]);
+    onChange(transformedData);
+  }, [onChange, transformedData]);
 
   return (
     <Form.Root className={cn(formStyles.form, styles.survey)}>
       <div className={formStyles.row}>
         <Form.Field name="roomName" className={formStyles.field}>
-          <Form.Label>Have you ever had cardiovascular deceases?</Form.Label>
-          <label className={styles.label}>
-            <input
-              type="radio"
-              name="deceases"
-              onChange={(e) => setIsDiseased(e.target.value === "on")}
-            />{" "}
-            Yes
-          </label>
-          <label className={styles.label}>
-            <input
-              type="radio"
-              name="deceases"
-              onChange={(e) => setIsDiseased(e.target.value !== "on")}
-            />{" "}
-            No
-          </label>
+          <div className={formStyles.side}>
+            <Form.Label className={formStyles.label}>
+              Have you ever had cardiovascular deceases?
+            </Form.Label>
+          </div>
+          <div className={formStyles.main}>
+            <div className={formStyles.controls}>
+              <label className={formStyles.inlineLabel}>
+                <input
+                  type="radio"
+                  name="deceases"
+                  onChange={(e) => setIsDiseased(e.target.value === "on")}
+                />
+                Yes
+              </label>
+              <label className={formStyles.inlineLabel}>
+                <input
+                  type="radio"
+                  name="deceases"
+                  onChange={(e) => setIsDiseased(e.target.value !== "on")}
+                />
+                No
+              </label>
+            </div>
+          </div>
         </Form.Field>
       </div>
 
       <div className={formStyles.row}>
         <Form.Field name="roomName" className={formStyles.field}>
-          <Form.Label>Gender</Form.Label>
-          <label className={styles.label}>
-            <input
-              type="radio"
-              name="gender"
-              onChange={(e) => setIsMale(e.target.value === "on")}
-            />{" "}
-            Male
-          </label>
-          <label className={styles.label}>
-            <input
-              type="radio"
-              name="gender"
-              onChange={(e) => setIsMale(e.target.value !== "on")}
-            />{" "}
-            Female
-          </label>
+          <div className={formStyles.side}>
+            <Form.Label className={formStyles.label}>Gender</Form.Label>
+          </div>
+          <div className={formStyles.main}>
+            <div className={formStyles.controls}>
+              <label className={formStyles.inlineLabel}>
+                <input
+                  type="radio"
+                  name="gender"
+                  onChange={(e) => setIsMale(e.target.value === "on")}
+                />
+                Male
+              </label>
+              <label className={formStyles.inlineLabel}>
+                <input
+                  type="radio"
+                  name="gender"
+                  onChange={(e) => setIsMale(e.target.value !== "on")}
+                />
+                Female
+              </label>
+            </div>
+          </div>
         </Form.Field>
       </div>
 
@@ -85,15 +98,21 @@ export const SurveyForm: FC<SurveyFormProps> = ({ onchange }) => {
           name="roomTimeout"
           className={cn(formStyles.field, styles.ageField)}
         >
-          <Form.Label>Age</Form.Label>
-          <Form.Control asChild>
-            <input
-              type="number"
-              value={age}
-              className={cn(formStyles.input, styles.ageInput)}
-              onChange={(event) => setAge(event.target.value)}
-            />
-          </Form.Control>
+          <div className={formStyles.side}>
+            <Form.Label className={formStyles.label}>Age</Form.Label>
+          </div>
+          <div className={formStyles.main}>
+            <div className={formStyles.controls}>
+              <Form.Control asChild>
+                <input
+                  type="number"
+                  value={age}
+                  className={cn(formStyles.input, styles.ageInput)}
+                  onChange={(event) => setAge(event.target.value)}
+                />
+              </Form.Control>
+            </div>
+          </div>
         </Form.Field>
 
         <div className={formStyles.field}></div>

@@ -3,7 +3,7 @@ import { ResearchLoader } from "@/features/researcher/ResearchLoader/ResearchLoa
 
 export const metadata: Metadata = {
   title: "zkMed",
-  description: "...Description",
+  description: "Research description",
 };
 
 export default function ResearcherPage() {

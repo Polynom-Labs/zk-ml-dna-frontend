@@ -93,6 +93,7 @@ export const ResearchSubmissionLoader: FC<
         />
       }
       backUrl="."
+      isProtected
     >
       <FileInput
         selectedFiles={files}
