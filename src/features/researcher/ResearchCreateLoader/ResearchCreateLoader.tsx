@@ -43,7 +43,7 @@ export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
       <CreateResearchForm onChange={setResearchData} />
       <ProgressActions canNext={isDataValid} onSubmit={handleSubmit} />
 
-      {isLoading && <LoaderOverflow title="Calculation..." />}
+      {isLoading && <LoaderOverflow title="Sending..." />}
     </Article>
   );
 };
