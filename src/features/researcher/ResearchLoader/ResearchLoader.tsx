@@ -5,11 +5,14 @@ import { Article } from "@/components/Article/Article";
 import { ResearchCard } from "../ResearchCard/ResearchCard";
 import { Researcher } from "../types";
 import { useParams } from "next/navigation";
+import { useLocalStorage } from "react-use";
 import researcher from "@/mocks/researcher.json";
 
 type ResearchLoaderProps = {};
 
+
 export const ResearchLoader: FC<ResearchLoaderProps> = () => {
+  const [contractName, setContractName, removeContractName] = useLocalStorage("contractName", "");
   const { research } = useParams();
   console.log("🚀 ~ research:", research);
 
@@ -31,6 +34,9 @@ export const ResearchLoader: FC<ResearchLoaderProps> = () => {
     const i = researchersFromServer.find(
       (item) => item.id === Number(research)
     );
+    if (i) {
+      setContractName(i.contractName);
+    }
     return i || null;
   }, [research, researchersFromServer]);
   console.log("🚀 ~ item ~ item:", item);

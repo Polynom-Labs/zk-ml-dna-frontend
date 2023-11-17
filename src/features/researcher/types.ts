@@ -9,4 +9,5 @@ export type Researcher = {
   submissions?: number;
   progress?: number;
   description?: string;
+  contractName?: string;
 };

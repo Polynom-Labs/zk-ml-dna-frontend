@@ -22,6 +22,8 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  const [contractName, setContractName, removeContractName] = useLocalStorage("contractName", "");
+  
   const { submitBiometricData } = useWallet()();
 
   const handleSubmit = useCallback(async () => {
@@ -29,9 +31,10 @@ export const ResearchSurveyLoader: FC<ResearchSurveyLoaderProps> = () => {
       ...surveyData,
       dnaCode: dnaValue ? JSON.parse(dnaValue) : undefined,
     };
-    console.log("start magic");
+    console.log("start magic: " + contractName);
 
     submitBiometricData(
+      contractName,
       surveyData?.age,
       surveyData?.diseased,
       surveyData?.gender,

@@ -181,7 +181,7 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
   }, [select, closeModal]);
 
   const submitBiometricData = useCallback(
-    async (age: number, diseased: number, gender: number, biometric_data: Array<number>) => {
+    async (programName: string, age: number, diseased: number, gender: number, biometric_data: Array<number>) => {
         try {
             showModal({
                 modalType: 'transactionLoader',
@@ -203,7 +203,7 @@ export const AleoWalletProvider: FC<any> = ({ children }) => {
                 const aleoTransaction = Transaction.createTransaction(
                     publicKey,
                     WalletAdapterNetwork.Testnet,
-                    "zk_ml_dna_v0.aleo",
+                    programName,
                     "submit",
                     inputs,
                     TRANSACTION_FEE,
