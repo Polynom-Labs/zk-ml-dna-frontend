@@ -24,6 +24,7 @@
     "axios": "^1.6.1",
     "bignumber.js": "^9.1.2",
     "classnames": "^2.3.2",
+    "https": "^1.0.0",
     "immer": "^10.0.3",
     "js-snarkvm": "^0.7.1",
     "lottie-react": "^2.4.0",

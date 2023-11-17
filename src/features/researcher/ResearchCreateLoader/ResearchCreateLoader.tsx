@@ -1,7 +1,6 @@
 "use client";
 import { FC, useCallback, useMemo, useState } from "react";
 import { Article } from "@/components/Article/Article";
-import { useWallet } from "@/features/wallet/hooks/useWallet";
 import {
   CreateResearchForm,
   NewResearch,
@@ -27,7 +26,28 @@ export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
 
   const handleSubmit = useCallback(async () => {
     setIsLoading(true);
-    console.log("TAKE MY NEW RESEARCH!", researchData);
+    if (!researchData) return;
+    const formData = new FormData();
+    formData.append("title", researchData.title);
+    if (researchData.description) {
+      formData.append("description", researchData.description);
+    }
+    formData.append("files", researchData.files[0]);
+    formData.append("draft", researchData.draft.toString());
+
+    try {
+      const res = await fetch("/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const resData = await res.json();
+
+      console.log(resData);
+    } catch (err) {
+      console.log(err);
+    }
+    // console.log("TAKE MY NEW RESEARCH!", researchData);
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);

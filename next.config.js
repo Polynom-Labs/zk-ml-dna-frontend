@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/:path*",
+        destination: "https://zk-ml.namer.id/:path*",
+      },
+    ];
+  },
+}
 
 module.exports = nextConfig
