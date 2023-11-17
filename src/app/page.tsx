@@ -3,7 +3,7 @@ import { ResearchersListLoader } from "@/features/researcher/ResearchersListLoad
 
 export const metadata: Metadata = {
   title: "AleoMed",
-  description: "Ongoing Researches",
+  description: "Ongoing Research Projects",
 };
 
 export default function HomePage() {
