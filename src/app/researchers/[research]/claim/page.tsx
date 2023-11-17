@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ClaimLoader } from "@/features/researcher/ClaimLoader/ClaimLoader";
 
 export const metadata: Metadata = {
-  title: "zkMed",
+  title: "AleoMed",
   description: "Claim Aleo Credits",
 };
 

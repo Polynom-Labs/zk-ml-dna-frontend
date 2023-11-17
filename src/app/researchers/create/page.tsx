@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ResearchCreateLoader } from "@/features/researcher/ResearchCreateLoader/ResearchCreateLoader";
 
 export const metadata: Metadata = {
-  title: "zkMed",
+  title: "AleoMed",
   description: "Create new research",
 };
 
