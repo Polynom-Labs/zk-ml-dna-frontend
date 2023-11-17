@@ -37,16 +37,16 @@ export const ResearchLoader: FC<ResearchLoaderProps> = () => {
     getResearches();
   }, [getResearches]);
 
-  // if (!item)
-  //   return (
-  //     <Article title="Research" backUrl=".">
-  //       Not found
-  //     </Article>
-  //   );
+  if (!item)
+    return (
+      <Article title="Research" backUrl=".">
+        Not found
+      </Article>
+    );
 
   return (
     <Article title="Research" backUrl=".">
-      <ResearchCard researcher={researcher} />
+      <ResearchCard researcher={item} />
     </Article>
   );
 };

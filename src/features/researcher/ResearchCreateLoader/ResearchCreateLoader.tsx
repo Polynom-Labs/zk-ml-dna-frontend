@@ -1,5 +1,6 @@
 "use client";
 import { FC, useCallback, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Article } from "@/components/Article/Article";
 import {
   CreateResearchForm,
@@ -11,6 +12,7 @@ import { LoaderOverflow } from "@/components/LoaderOverflow/LoaderOverflow";
 type ResearchCreateLoaderProps = {};
 
 export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
+  const router = useRouter();
   const [researchData, setResearchData] = useState<NewResearch | null>(null);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -44,6 +46,7 @@ export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
       const resData = await res.json();
 
       console.log(resData);
+      router.push(`/researchers/${resData.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -51,7 +54,7 @@ export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
-  }, [researchData]);
+  }, [researchData, router]);
 
   return (
     <Article
