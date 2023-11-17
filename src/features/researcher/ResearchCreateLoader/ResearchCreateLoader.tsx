@@ -14,6 +14,7 @@ type ResearchCreateLoaderProps = {};
 export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
   const router = useRouter();
   const [researchData, setResearchData] = useState<NewResearch | null>(null);
+  console.log("🚀 ~ researchData:", researchData?.files?.[0].name);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -36,6 +37,7 @@ export const ResearchCreateLoader: FC<ResearchCreateLoaderProps> = () => {
     }
     formData.append("files", researchData.files[0]);
     formData.append("draft", researchData.draft.toString());
+    formData.append("contractName", researchData?.files?.[0].name);
 
     try {
       const res = await fetch("/upload", {

@@ -13,6 +13,7 @@ export type NewResearch = {
   description?: string;
   files: File[];
   draft: 0 | 1;
+  contractName?: string;
 };
 
 type CreateResearchFormProps = {
