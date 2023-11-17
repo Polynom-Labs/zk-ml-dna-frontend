@@ -28,17 +28,11 @@ export const ResearchCard: FC<ResearchCardProps> = ({
   return (
     <div className={styles.predisposition}>
       <aside className={styles.media}>
-        {researcher.photoUrl ? (
-          <img
-            src={researcher.photoUrl}
-            alt={researcher.name}
-            className={styles.poster}
-          />
-        ) : (
-          <div className={styles.placeholder}>
-            <Pulse />
-          </div>
-        )}
+        <img
+          src={researcher.photoUrl || "/images/bg-dna-2.jpg"}
+          alt={researcher.name}
+          className={styles.poster}
+        />
       </aside>
 
       <header className={styles.content}>
