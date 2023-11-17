@@ -3,8 +3,12 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/:path*",
-        destination: "https://zk-ml.namer.id/:path*",
+        source: "/items",
+        destination: "https://zk-ml.namer.id/researchers",
+      },
+      {
+        source: "/upload",
+        destination: "https://zk-ml.namer.id/upload",
       },
     ];
   },

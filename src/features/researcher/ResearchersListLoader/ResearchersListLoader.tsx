@@ -14,7 +14,7 @@ export const ResearchersListLoader: FC<ResearchersListLoaderProps> = () => {
 
   const getResearches = useCallback(async () => {
     try {
-      const response = await axios.get("/researches");
+      const response = await axios.get("/items");
       console.log("🚀 ~ response.data:", response.data);
       setResearchers(response.data);
       return response.data;
