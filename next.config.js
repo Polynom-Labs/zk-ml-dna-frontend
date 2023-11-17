@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: "/items",
-        destination: "https://zk-ml.namer.id/researchers",
+        destination: "https://zk-ml.namer.id/researches",
       },
       {
         source: "/upload",

@@ -19,7 +19,7 @@ export const ResearchCard: FC<ResearchCardProps> = ({
   researcher,
 }) => {
   const { research } = useParams();
-  console.log("🚀 ~ research:", research);
+  // console.log("🚀 ~ research:", research);
 
   const dsc = useMemo(() => {
     return researcher.description?.split("\n");
