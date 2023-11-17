@@ -28,7 +28,7 @@ export const ResearchersListLoader: FC<ResearchersListLoaderProps> = () => {
   }, [getResearches]);
 
   return (
-    <Article title="Ongoing Researchers">
+    <Article title="Ongoing Researches">
       <ResearchersList researchers={researchersFromServer} />
     </Article>
   );
