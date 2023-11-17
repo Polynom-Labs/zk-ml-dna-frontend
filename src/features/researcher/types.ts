@@ -1,5 +1,5 @@
 export type Researcher = {
-  id?: string;
+  id?: string | number;
   title: string;
   name: string;
   slug: string;

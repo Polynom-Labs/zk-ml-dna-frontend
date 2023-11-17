@@ -28,7 +28,9 @@ export const ResearchLoader: FC<ResearchLoaderProps> = () => {
   }, []);
 
   const item = useMemo(() => {
-    const i = researchersFromServer.find((item) => item.id === research);
+    const i = researchersFromServer.find(
+      (item) => item.id === Number(research)
+    );
     return i || null;
   }, [research, researchersFromServer]);
   console.log("🚀 ~ item ~ item:", item);

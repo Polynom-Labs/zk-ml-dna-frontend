@@ -63,7 +63,7 @@ export const ResearchCard: FC<ResearchCardProps> = ({
       </aside>
 
       <div className={styles.progress}>
-        <Progress value={researcher.progress} />
+        <Progress value={researcher.progress || 78} />
         <div className={styles.percent}>Complete: {researcher.progress}%</div>
       </div>
 

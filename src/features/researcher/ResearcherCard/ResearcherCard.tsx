@@ -17,10 +17,7 @@ export const ResearcherCard: FC<ResearcherCardProps> = ({
   researcher,
 }) => {
   return (
-    <Link
-      href={`/researchers/${researcher.slug}`}
-      className={styles.researcher}
-    >
+    <Link href={`/researchers/${researcher.id}`} className={styles.researcher}>
       <aside className={styles.media}>
         {researcher.photoUrl ? (
           <img
