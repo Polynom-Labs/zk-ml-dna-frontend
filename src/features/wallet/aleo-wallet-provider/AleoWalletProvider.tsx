@@ -18,7 +18,7 @@ import { fetchPrivateSwapData, fetchPublicBalance } from "../api/aleo";
 // import { useWalletStore } from 'features/wallet';
 import __wbg_init, { bhp256 } from "js-snarkvm";
 
-const TRANSACTION_FEE = 5_500_000;
+const TRANSACTION_FEE = 15_500_000;
 
 // (() => {
 //     __wbg_init().then(async () => {
