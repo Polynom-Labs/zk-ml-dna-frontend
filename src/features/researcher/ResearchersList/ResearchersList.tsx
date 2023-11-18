@@ -4,6 +4,7 @@ import { FC } from "react";
 import { Researcher } from "../types";
 import styles from "./ResearchersList.module.scss";
 import { ResearcherCard } from "../ResearcherCard/ResearcherCard";
+import images from "@/mocks/images.json";
 
 type ResearchersListProps = {
   className?: string;
@@ -19,7 +20,10 @@ export const ResearchersList: FC<ResearchersListProps> = ({
       <ul className={styles.list}>
         {researchers.map((r, index) => (
           <li className={styles.item} key={index}>
-            <ResearcherCard researcher={r} />
+            <ResearcherCard
+              researcher={r}
+              photoUrl={`/images/${images[index]}`}
+            />
           </li>
         ))}
       </ul>

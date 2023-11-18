@@ -48,7 +48,7 @@ export const Logo: FC<LogoProps> = ({ className }) => {
           </linearGradient>
         </defs>
       </svg>
-      zkMed
+      AleoMed
     </Link>
   );
 };

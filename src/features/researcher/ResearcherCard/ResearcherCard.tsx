@@ -10,26 +10,22 @@ import styles from "./ResearcherCard.module.scss";
 type ResearcherCardProps = {
   className?: string;
   researcher: Researcher;
+  photoUrl?: string;
 };
 
 export const ResearcherCard: FC<ResearcherCardProps> = ({
   className,
   researcher,
+  photoUrl,
 }) => {
   return (
     <Link href={`/researchers/${researcher.id}`} className={styles.researcher}>
       <aside className={styles.media}>
-        {researcher.photoUrl ? (
-          <img
-            src={researcher.photoUrl}
-            alt={researcher.name}
-            className={styles.poster}
-          />
-        ) : (
-          <div className={styles.placeholder}>
-            <Pulse />
-          </div>
-        )}
+        <img
+          src={researcher.photoUrl || photoUrl || "/images/bg-dna-2.jpg"}
+          alt={researcher.name}
+          className={styles.poster}
+        />
       </aside>
 
       <header className={styles.content}>

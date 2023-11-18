@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { ResearchersListLoader } from "@/features/researcher/ResearchersListLoader/ResearchersListLoader";
 
 export const metadata: Metadata = {
-  title: "zkMed",
-  description: "Ongoing Researches",
+  title: "AleoMed",
+  description: "Ongoing Research Projects",
 };
 
 export default function HomePage() {
